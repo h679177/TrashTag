@@ -1,0 +1,51 @@
+/* Styles for the body */
+body {
+    background-color: #e0f7e0; /* Diffuse green color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Optional: set a font */
+    flex-direction: column; /* Arrange items vertically */
+}
+
+/* Styles for the header text */
+h1 {
+    color: #333; /* Dark grey color */
+    font-size: 2em; /* Header font size */
+    margin-bottom: 20px; /* Space between header and search bar */
+}
+
+/* Styles for the form */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles for the search bar */
+input[type="text"] {
+    padding: 10px; /* Padding inside the text box */
+    font-size: 1em; /* Text size in the text box */
+    border: 2px solid #a3d7a3; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    width: 250px; /* Width of the search bar */
+    margin-right: 10px; /* Space between the search bar and button */
+}
+
+/* Styles for the button */
+button {
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #86c686; /* Slightly darker green color */
+    color: white; /* Text color inside the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor shape on hover */
+    font-size: 1em; /* Button text size */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #72b472; /* Darker green when hovered */
+}
