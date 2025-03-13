@@ -7,11 +7,7 @@ body {
     height: 100vh; /* Full height of the viewport */
     margin: 0; /* Remove default margin */
     font-family: Arial, sans-serif; /* Optional: set a font */
-}
-
-/* Styles for the container holding the search bar and header */
-.container {
-    text-align: center; /* Center the text inside the container */
+    flex-direction: column; /* Arrange items vertically */
 }
 
 /* Styles for the header text */
@@ -21,8 +17,8 @@ h1 {
     margin-bottom: 20px; /* Space between header and search bar */
 }
 
-/* Styles for the search bar and button wrapper */
-.search-bar-wrapper {
+/* Styles for the form */
+form {
     display: flex;
     justify-content: center;
     align-items: center;
