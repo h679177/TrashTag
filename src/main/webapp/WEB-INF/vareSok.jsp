@@ -9,10 +9,16 @@
 </head>
 
 <body>
-<h1>VareSøk</h1>
+<h1>Søk etter vare:</h1>
 <form action="/search" method="get">
 	<input type="text" name="query" placeholder="Søk etter vare...">
 	<button type="submit">Søk</button>
+<nav>
+	<a href="hjem.jsp">Hjem</a> |
+	<a href="vareSok.jsp">Søk</a> |
+	<a href="kart.jsp">Kart</a> |
+	<a href="profil.jsp">Profil</a>
+</nav>
 </form>
 </body>
 </html>
