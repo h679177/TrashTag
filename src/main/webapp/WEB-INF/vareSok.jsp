@@ -5,8 +5,14 @@
 <head>
 	<meta charset="UTF-8">
 	<link href="simple.css" rel="stylesheet" type="text/css" />
-	<title>Påmelding</title>
+	<title>Søk etter vare</title>
 </head>
 
 <body>
+<h1>VareSøk</h1>
+<form action="/search" method="get">
+	<input type="text" name="query" placeholder="Søk etter vare...">
+	<button type="submit">Søk</button>
+</form>
 </body>
+</html>
