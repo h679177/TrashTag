@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="simple.css" rel="stylesheet" type="text/css" />
-    <title>Søk etter vare</title>
+    <title>Profil</title>
 </head>
 
 <body>

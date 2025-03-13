@@ -1,6 +1,6 @@
 /* Styles for the body */
 body {
-    background-color: #e0f7e0; /* Diffuse green color */
+    background-color: #fff9f0; /* Diffuse green color */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,8 +12,13 @@ body {
 
 /* Styles for the header text */
 h1 {
-    color: #333; /* Dark grey color */
-    font-size: 2em; /* Header font size */
+
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    color: #656965;
+    font-size: 50px; /* Header font size */
     margin-bottom: 20px; /* Space between header and search bar */
 }
 
@@ -28,7 +33,7 @@ form {
 input[type="text"] {
     padding: 10px; /* Padding inside the text box */
     font-size: 1em; /* Text size in the text box */
-    border: 2px solid #a3d7a3; /* Border color */
+    border: 2px solid #656965; /* Border color */
     border-radius: 5px; /* Rounded corners */
     width: 250px; /* Width of the search bar */
     margin-right: 10px; /* Space between the search bar and button */
@@ -37,7 +42,7 @@ input[type="text"] {
 /* Styles for the button */
 button {
     padding: 10px 20px; /* Padding inside the button */
-    background-color: #86c686; /* Slightly darker green color */
+    background-color: #656965; /* Slightly darker green color */
     color: white; /* Text color inside the button */
     border: none; /* Remove default border */
     border-radius: 5px; /* Rounded corners */
@@ -47,5 +52,22 @@ button {
 
 /* Button hover effect */
 button:hover {
-    background-color: #72b472; /* Darker green when hovered */
+    background-color: #656965; /* Darker green when hovered */
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #656965; /* Optional: to make the background color visible */
+    padding: 10px; /* Optional: to add some spacing around the links */
+    text-align: center; /* Optional: to center the links horizontally */
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff5ea;
+    padding: 150px;
+
 }
