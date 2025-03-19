@@ -9,6 +9,30 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 	<title>Vare søk</title>
+	<style>
+		.trash-buttons {
+			margin-top: 20px;
+			display: flex;
+			justify-content: center;
+			gap: 15px;
+			flex-wrap: wrap;
+		}
+		.trash-buttons a {
+			text-decoration: none;
+			padding: 10px 15px;
+			border-radius: 8px;
+			background-color: #007BFF;
+			color: white;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		.trash-buttons a img {
+			width: 24px;
+			height: 24px;
+		}
+	</style>
 </head>
 
 <body>
@@ -24,7 +48,6 @@
 	<button type="submit">Søk</button>
 </form>
 <%
-	// Simulated product data (later replace this with actual backend logic)
 	String ean = request.getParameter("ean");
 	String productName = null;
 	String material = null;
@@ -55,5 +78,25 @@
 <%
 	}
 %>
+
+<!-- Default trash category buttons -->
+<div class="trash-buttons">
+	<a href="plast.jsp">
+		<img src="icons/plast.png" alt="Plast"> Plast
+	</a>
+	<a href="papp.jsp">
+		<img src="icons/papp.png" alt="Papp"> Papp
+	</a>
+	<a href="glass_metall.jsp">
+		<img src="icons/glass_metall.png" alt="Glass/Metall"> Glass/Metall
+	</a>
+	<a href="matavfall.jsp">
+		<img src="icons/matavfall.png" alt="Matavfall"> Matavfall
+	</a>
+	<a href="elektronikk.jsp">
+		<img src="icons/elektronikk.png" alt="Elektronikk"> Elektronikk
+	</a>
+</div>
+
 </body>
 </html>
