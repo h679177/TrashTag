@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="no">
 <head>
-    <title>Leaflet Map</title>
+    <title>Returpunkt</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link href="design.css" rel="stylesheet" type="text/css" />
 </head>
