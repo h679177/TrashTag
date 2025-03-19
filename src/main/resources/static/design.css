@@ -71,3 +71,10 @@ nav a {
     padding: 150px;
 
 }
+
+#map {
+    height: 50%;
+    width: 50%;
+    min-height: 300px;
+    min-width: 300px;
+}
