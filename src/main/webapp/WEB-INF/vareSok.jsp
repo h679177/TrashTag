@@ -13,26 +13,48 @@
 		.trash-buttons {
 			margin-top: 20px;
 			display: flex;
-			justify-content: center;
 			gap: 15px;
-			flex-wrap: wrap;
+			justify-content: center;
 		}
-		.trash-buttons a {
-			text-decoration: none;
-			padding: 10px 15px;
-			border-radius: 8px;
-			background-color: #007BFF;
+		.trash-buttons button {
+			background-color: #656965;
 			color: white;
 			font-weight: bold;
+			font-size: 10px;
+			padding: 12px; /* Makes it more square */
+			border: none;
+			border-radius: 12px; /* Adjust for more rounded corners */
+			cursor: pointer;
 			display: flex;
 			align-items: center;
+			justify-content: center;
 			gap: 8px;
+			width: 60px; /* Set fixed width */
+			height: 60px; /* Set fixed height */
+			text-align: center;
 		}
-		.trash-buttons a img {
-			width: 24px;
-			height: 24px;
+		.trash-buttons button img {
+			width: 28px; /* Slightly larger icon */
+			height: 28px;
+		}
+		.trash-info {
+			display: none;
+			margin-top: 10px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			background-color: #f9f9f9;
+			width: 60%;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	</style>
+	<script>
+		function toggleInfo(id) {
+			let element = document.getElementById(id);
+			element.style.display = (element.style.display === "none" || element.style.display === "") ? "block" : "none";
+		}
+	</script>
 </head>
 
 <body>
@@ -79,23 +101,46 @@
 	}
 %>
 
-<!-- Default trash category buttons -->
+<!-- Trash category buttons with expandable info -->
 <div class="trash-buttons">
-	<a href="plast.jsp">
-		<img src="icons/plast.png" alt="Plast"> Plast
-	</a>
-	<a href="papp.jsp">
-		<img src="icons/papp.png" alt="Papp"> Papp
-	</a>
-	<a href="glass_metall.jsp">
-		<img src="icons/glass_metall.png" alt="Glass/Metall"> Glass/Metall
-	</a>
-	<a href="matavfall.jsp">
-		<img src="icons/matavfall.png" alt="Matavfall"> Matavfall
-	</a>
-	<a href="elektronikk.jsp">
-		<img src="icons/elektronikk.png" alt="Elektronikk"> Elektronikk
-	</a>
+	<button onclick="toggleInfo('plastInfo')">
+		Plast
+	</button>
+	<button onclick="toggleInfo('pappInfo')">
+		Papp
+	</button>
+	<button onclick="toggleInfo('glassMetallInfo')">
+		Glass/
+		Metall
+	</button>
+	<button onclick="toggleInfo('matavfallInfo')">
+		Matavfall
+	</button>
+	<button onclick="toggleInfo('elektronikkInfo')">
+		Elektronikk
+	</button>
+</div>
+
+<!-- Hidden trash info sections -->
+<div id="plastInfo" class="trash-info">
+	<h3>Plastavfall</h3>
+	<p>Plastemballasje bør skylles og sorteres i plastavfall. Store plastgjenstander går til gjenvinningsstasjon.</p>
+</div>
+<div id="pappInfo" class="trash-info">
+	<h3>Papp og papir</h3>
+	<p>Papp, papir og kartong resirkuleres. Husk å fjerne plastbelegg før sortering.</p>
+</div>
+<div id="glassMetallInfo" class="trash-info">
+	<h3>Glass og metall</h3>
+	<p>Skyll glass og metall før det kastes i riktig beholder. Metall kan også leveres til gjenvinningsstasjon.</p>
+</div>
+<div id="matavfallInfo" class="trash-info">
+	<h3>Matavfall</h3>
+	<p>Matavfall kastes i bioavfall. Unngå plastposer – bruk papirposer eller bioposer.</p>
+</div>
+<div id="elektronikkInfo" class="trash-info">
+	<h3>Elektronikkavfall</h3>
+	<p>Elektronikk må leveres til spesialavfall. Ikke kast i restavfall.</p>
 </div>
 
 </body>
