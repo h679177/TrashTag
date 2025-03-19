@@ -59,10 +59,10 @@
 
 <body>
 <nav>
-	<a href="hjem">HJEM</a>
-	<a href="vareSok">SØK</a>
-	<a href="kart">KART</a>
-	<a href="profil">PROFIL</a>
+	<a href="hjem.jsp">HJEM</a>
+	<a href="vareSok.jsp">SØK</a>
+	<a href="kart.jsp">KART</a>
+	<a href="profil.jsp">PROFIL</a>
 </nav>
 <h1>SØK ETTER VARE:</h1>
 <form method="get">
@@ -93,14 +93,13 @@
 				material = "-";
 		}
 %>
-<h2>Produktdetaljer</h2>
-<c:forEach var="feilmelding" items="${feilmeldinger}">
-	${feilmelding}<br>
-</c:forEach></p>
-<p><strong>EAN:</strong> <%= ean %> ${vare.EAN_nummer}</p>
-<p><strong>Produktnavn:</strong> <%= productName %> ${vare.varenavn}</p>
-<p><strong>Produsent:</strong>${vare.varenavn}</p>
-<p><strong>Materiale:</strong> <%= material %> ${vare.kategori}</p>
+
+<div class="trash-info" style="display: block;">
+	<h3>Produktdetaljer</h3>
+	<p><strong>EAN:</strong> <%= ean %></p>
+	<p><strong>Produktnavn:</strong> <%= productName %></p>
+	<p><strong>Materiale:</strong> <%= material %></p>
+</div>
 <%
 	}
 %>
