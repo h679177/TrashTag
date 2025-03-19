@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var fordeCoordinates = [61.4521, 5.8566];
     var zoomLevel = 12; // Adjust zoom level as necessary
 
-    // Initialize the map centered on Førde
+
     var map = L.map('map').setView(fordeCoordinates, zoomLevel);
 
     // Add tile layer from OpenStreetMap
