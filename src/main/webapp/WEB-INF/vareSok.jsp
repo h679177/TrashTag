@@ -93,10 +93,13 @@
 				material = "-";
 		}
 %>
-<h2>Produktdetaljer</h2>
-<p><strong>EAN:</strong> <%= ean %></p>
-<p><strong>Produktnavn:</strong> <%= productName %></p>
-<p><strong>Materiale:</strong> <%= material %></p>
+
+<div class="trash-info" style="display: block;">
+	<h3>Produktdetaljer</h3>
+	<p><strong>EAN:</strong> <%= ean %></p>
+	<p><strong>Produktnavn:</strong> <%= productName %></p>
+	<p><strong>Materiale:</strong> <%= material %></p>
+</div>
 <%
 	}
 %>
