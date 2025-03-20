@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class VareController {
 
     @GetMapping("/vareSok")
+    //@GetMapping("/vareSok")
     public String vareSok(Model model){
         return "vareSok";
     }
@@ -18,7 +19,13 @@ public class VareController {
     public String sokEtterVare(Model model,
                                RedirectAttributes ra){
 
+        /*if (!vare.getEAN_Nummer().equals(VareRepo)){
+            ra.addFlashAttribute("feilmeldinger",
+                    "Varen finnes ikke i vårt system, prøv igjen");
+            return "redirect:vareSok";
+        }
 
+         */
 
         return "redirect:vareSok";
     }
