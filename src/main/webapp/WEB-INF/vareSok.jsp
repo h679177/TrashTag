@@ -71,16 +71,20 @@
 	<button type="submit">Søk</button>
 </form>
 
-<div class="trash-info" style="display: block;">
-	<h3>Produktdetaljer</h3>
-	<p style="color:red;">
-		<c:forEach var="feilmelding" items="${feilmeldinger}">
-			${feilmelding}<br>
-		</c:forEach></p>
-	<p><strong>EAN:</strong> ${vare.eanNummer}</p>
-	<p><strong>Produktnavn:</strong> ${vare.varenavn}</p>
-	<p><strong>Produsent:</strong> ${vare.produsent}</p>
-</div>
+<c:if test="${not empty feilmelding}">
+	<div style="color: #338e45; margin-top: 10px;">
+			${feilmelding}
+	</div>
+</c:if>
+
+<c:if test="${not empty vare}">
+	<div class="trash-info" style="display: block;">
+		<h3>Produktdetaljer</h3>
+		<p><strong>EAN:</strong> ${vare.eanNummer}</p>
+		<p><strong>Produktnavn:</strong> ${vare.varenavn}</p>
+		<p><strong>Produsent:</strong> ${vare.produsent}</p>
+	</div>
+</c:if>
 
 <!-- Trash category buttons with expandable info -->
 <div class="trash-buttons">

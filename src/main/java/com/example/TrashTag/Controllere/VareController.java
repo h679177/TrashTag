@@ -16,13 +16,16 @@ public class VareController {
 
     @GetMapping("/vareSok")
     public String vareSok(@RequestParam(value = "EAN", required = false) String EAN, Model model) {
-        if (EAN != null && !EAN.isEmpty()) {
-            Vare vare = vareRepo.findByEanNummer(EAN);
-
-            if (vare == null) {
-                model.addAttribute("feilmelding", "Varen finnes ikke i vårt system, prøv igjen");
+        if (EAN != null) {
+            if (EAN.isEmpty()) {
+                model.addAttribute("feilmelding", "Vennligst oppgi et EAN-nummer");
             } else {
-                model.addAttribute("vare", vare);
+                Vare vare = vareRepo.findByEanNummer(EAN);
+                if (vare == null) {
+                    model.addAttribute("feilmelding", "Varen finnes ikke i vårt system, prøv igjen");
+                } else {
+                    model.addAttribute("vare", vare);
+                }
             }
         }
         return "vareSok";

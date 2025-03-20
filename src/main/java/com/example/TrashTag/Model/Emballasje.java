@@ -1,36 +1,40 @@
 package com.example.TrashTag.Model;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(schema = "emballasje")
+@Table(name ="emballasje", schema = "vareinformasjon")
 public class Emballasje {
 
     @Id
-    String EAN_Nummer;
+    @Column(name = "ean_nummer")
+    private String eanNummer;
 
     @Id
+    @Column(name = "avfallstype")
     String avfallstype;
 
+    @Column(name = "kommentar")
     String kommentar;
 
     public Emballasje() {}
 
-    public Emballasje(String EAN_Nummer, String avfallstype, String kommentar) {
-        this.EAN_Nummer = EAN_Nummer;
+    public Emballasje(String eanNummer, String avfallstype, String kommentar) {
+        this.eanNummer = eanNummer;
         this.avfallstype = avfallstype;
         this.kommentar = kommentar;
     }
 
-    public String getEAN_Nummer() {
-        return EAN_Nummer;
+    public String getEanNummer() {
+        return eanNummer;
     }
 
-    public void setEAN_Nummer(String EAN_Nummer) {
-        this.EAN_Nummer = EAN_Nummer;
+    public void setEAN_Nummer(String eanNummer) {
+        this.eanNummer = eanNummer;
     }
 
     public String getAvfallstype() {
