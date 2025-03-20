@@ -1,37 +1,38 @@
 package com.example.TrashTag.Model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(schema = "vare")
+@Table(name = "vare", schema = "vareinformasjon")
 public class Vare {
+
     @Id
-            @NotNull
-    String EAN_Nummmer;
-    String varenavn;
-    String produsent;
-    String kategori;
+    @Column(name = "ean_nummer")
+    private String eanNummer;
 
-    public Vare() { }
+    private String varenavn;
+    private String produsent;
 
-    public Vare(String EAN_Nummmer, String varenavn, String produsent, String kategori) {
-        this.EAN_Nummmer = EAN_Nummmer;
+    public Vare() {
+    }
+
+    public Vare(String eanNummer, String varenavn, String produsent, String kategori) {
+        this.eanNummer = eanNummer;
         this.varenavn = varenavn;
         this.produsent = produsent;
-        this.kategori = kategori;
     }
 
+    // Getters and Setters
 
-
-    public String getEAN_Nummmer() {
-        return EAN_Nummmer;
+    public String getEanNummer() {
+        return eanNummer;
     }
 
-    public void setEAN_Nummmer(String EAN_Nummmer) {
-        this.EAN_Nummmer = EAN_Nummmer;
+    public void setEanNummer(String eanNummer) {
+        this.eanNummer = eanNummer;
     }
 
     public String getVarenavn() {
@@ -48,13 +49,5 @@ public class Vare {
 
     public void setProdusent(String produsent) {
         this.produsent = produsent;
-    }
-
-    public String getKategori() {
-        return kategori;
-    }
-
-    public void setKategori(String kategori) {
-        this.kategori = kategori;
     }
 }

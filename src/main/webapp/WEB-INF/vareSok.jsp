@@ -66,33 +66,10 @@
 </nav>
 <h1>SØK ETTER VARE:</h1>
 <form method="get">
-	<input type="text" name="ean" placeholder="EAN-nummer">
+	<input type="text" name="EAN" placeholder="eanNummer">
+
 	<button type="submit">Søk</button>
 </form>
-<%
-	String ean = request.getParameter("ean");
-	String productName = null;
-	String material = null;
-
-	if (ean != null && !ean.isEmpty()) {
-		switch (ean) {
-			case "1234567890123":
-				productName = "GoMorgen yoghurt";
-				material = "Plast";
-				break;
-			case "9876543210987":
-				productName = "Melk";
-				material = "Papp";
-				break;
-			case "5556667778889":
-				productName = "Tomatpuré";
-				material = "Glass/metall";
-				break;
-			default:
-				productName = "Produkt ikke funnet";
-				material = "-";
-		}
-%>
 
 <div class="trash-info" style="display: block;">
 	<h3>Produktdetaljer</h3>
@@ -100,14 +77,10 @@
 		<c:forEach var="feilmelding" items="${feilmeldinger}">
 			${feilmelding}<br>
 		</c:forEach></p>
-	<p><strong>EAN:</strong> <%= ean %> ${vare.EAN_nummer}</p>
-	<p><strong>Produktnavn:</strong> <%= productName %>${vare.varenavn}</p>
+	<p><strong>EAN:</strong> ${vare.eanNummer}</p>
+	<p><strong>Produktnavn:</strong> ${vare.varenavn}</p>
 	<p><strong>Produsent:</strong> ${vare.produsent}</p>
-	<p><strong>Materiale:</strong> <%= material %>${emballasje.avfallstype}</p>
 </div>
-<%
-	}
-%>
 
 <!-- Trash category buttons with expandable info -->
 <div class="trash-buttons">
