@@ -59,50 +59,32 @@
 
 <body>
 <nav>
-	<a href="hjem.jsp">HJEM</a>
-	<a href="vareSok.jsp">SØK</a>
-	<a href="kart.jsp">KART</a>
-	<a href="profil.jsp">PROFIL</a>
+	<a href="hjem">HJEM</a>
+	<a href="vareSok">SØK</a>
+	<a href="kart">KART</a>
+	<a href="profil">PROFIL</a>
 </nav>
 <h1>SØK ETTER VARE:</h1>
 <form method="get">
-	<input type="text" name="ean" placeholder="EAN-nummer">
+	<input type="text" name="EAN" placeholder="eanNummer">
+
 	<button type="submit">Søk</button>
 </form>
-<%
-	String ean = request.getParameter("ean");
-	String productName = null;
-	String material = null;
 
-	if (ean != null && !ean.isEmpty()) {
-		switch (ean) {
-			case "1234567890123":
-				productName = "GoMorgen yoghurt";
-				material = "Plast";
-				break;
-			case "9876543210987":
-				productName = "Melk";
-				material = "Papp";
-				break;
-			case "5556667778889":
-				productName = "Tomatpuré";
-				material = "Glass/metall";
-				break;
-			default:
-				productName = "Produkt ikke funnet";
-				material = "-";
-		}
-%>
+<c:if test="${not empty feilmelding}">
+	<div style="color: #338e45; margin-top: 10px;">
+			${feilmelding}
+	</div>
+</c:if>
 
-<div class="trash-info" style="display: block;">
-	<h3>Produktdetaljer</h3>
-	<p><strong>EAN:</strong> <%= ean %></p>
-	<p><strong>Produktnavn:</strong> <%= productName %></p>
-	<p><strong>Materiale:</strong> <%= material %></p>
-</div>
-<%
-	}
-%>
+<c:if test="${not empty vare}">
+	<div class="trash-info" style="display: block;">
+		<h3>Produktdetaljer</h3>
+		<p><strong>EAN:</strong> ${vare.eanNummer}</p>
+		<p><strong>Produktnavn:</strong> ${vare.varenavn}</p>
+		<p><strong>Produsent:</strong> ${vare.produsent}</p>
+	</div>
+</c:if>
 
 <!-- Trash category buttons with expandable info -->
 <div class="trash-buttons">
