@@ -103,7 +103,7 @@
 	<p><strong>EAN:</strong> <%= ean %> ${vare.EAN_nummer}</p>
 	<p><strong>Produktnavn:</strong> <%= productName %>${vare.varenavn}</p>
 	<p><strong>Produsent:</strong> ${vare.produsent}</p>
-	<p><strong>Materiale:</strong> <%= material %>${vare.kategori}</p>
+	<p><strong>Materiale:</strong> <%= material %>${emballasje.avfallstype}</p>
 </div>
 <%
 	}
