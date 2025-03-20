@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(schema = "emballasje")
+@Table(schema = "avfallstype")
 public class Avfallstype {
     @Id
     String avfallstype;

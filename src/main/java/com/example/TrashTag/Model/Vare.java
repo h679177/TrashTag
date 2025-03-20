@@ -3,11 +3,13 @@ package com.example.TrashTag.Model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(schema = "Vare")
+@Table(schema = "vare")
 public class Vare {
     @Id
+            @NotNull
     String EAN_Nummmer;
     String varenavn;
     String produsent;
