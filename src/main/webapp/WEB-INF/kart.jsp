@@ -8,6 +8,12 @@
     <link href="design.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<nav>
+    <a href="hjem.jsp">HJEM</a>
+    <a href="vareSok.jsp">SØK</a>
+    <a href="kart.jsp">KART</a>
+    <a href="profil.jsp">PROFIL</a>
+</nav>
 <h1>Leaflet Map</h1>
 <div id="map"></div>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
