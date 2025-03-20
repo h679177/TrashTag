@@ -8,7 +8,7 @@
     <link href="design.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<h1>Leaflet Map</h1>
+<h1>Returpunkt</h1>
 <div id="map"></div>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="kart.js"></script>

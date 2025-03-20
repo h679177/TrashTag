@@ -18,13 +18,7 @@ public class VareController {
     public String sokEtterVare(Model model,
                                RedirectAttributes ra){
 
-        /*if (!vare.getEAN_Nummer().equals(VareRepo)){
-            ra.addFlashAttribute("feilmeldinger",
-                    "Varen finnes ikke i vårt system, prøv igjen");
-            return "redirect:vareSok";
-        }
 
-         */
 
         return "redirect:vareSok";
     }
