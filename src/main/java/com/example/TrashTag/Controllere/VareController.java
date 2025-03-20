@@ -10,7 +10,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class VareController {
 
     @GetMapping("/vareSok")
-    //@GetMapping("/vareSok")
     public String vareSok(Model model){
         return "vareSok";
     }
