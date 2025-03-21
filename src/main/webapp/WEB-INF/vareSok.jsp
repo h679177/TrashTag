@@ -5,50 +5,12 @@
 <head>
 	<meta charset="UTF-8">
 	<link href="design.css" rel="stylesheet" type="text/css" />
+	<link href="vareSok.css" rel="stylesheet" type="text/css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 	<title>Vare søk</title>
-	<style>
-		.trash-buttons {
-			margin-top: 20px;
-			display: flex;
-			gap: 15px;
-			justify-content: center;
-		}
-		.trash-buttons button {
-			background-color: #656965;
-			color: white;
-			font-weight: bold;
-			font-size: 10px;
-			padding: 12px; /* Makes it more square */
-			border: none;
-			border-radius: 12px; /* Adjust for more rounded corners */
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 8px;
-			width: 60px; /* Set fixed width */
-			height: 60px; /* Set fixed height */
-			text-align: center;
-		}
-		.trash-buttons button img {
-			width: 28px; /* Slightly larger icon */
-			height: 28px;
-		}
-		.trash-info {
-			display: none;
-			margin-top: 10px;
-			padding: 10px;
-			border: 1px solid #ccc;
-			border-radius: 8px;
-			background-color: #f9f9f9;
-			width: 60%;
-			margin-left: auto;
-			margin-right: auto;
-		}
-	</style>
+
 	<script>
 		function toggleInfo(id) {
 			let element = document.getElementById(id);
@@ -64,9 +26,9 @@
 	<a href="kart">KART</a>
 	<a href="profil">PROFIL</a>
 </nav>
-<h1>SØK ETTER VARE:</h1>
+<h1>SØK ETTER VARE</h1>
 <form method="get">
-	<input type="text" name="EAN" placeholder="eanNummer">
+	<input type="text" name="EAN" placeholder="EAN-nummer">
 
 	<button type="submit">Søk</button>
 </form>
@@ -128,5 +90,6 @@
 	<p>Elektronikk må leveres til spesialavfall. Ikke kast i restavfall.</p>
 </div>
 
+<%@ include file="footer.jsp" %>
 </body>
 </html>
