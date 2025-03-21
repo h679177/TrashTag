@@ -83,6 +83,10 @@
 		<p><strong>EAN:</strong> ${vare.eanNummer}</p>
 		<p><strong>Produktnavn:</strong> ${vare.varenavn}</p>
 		<p><strong>Produsent:</strong> ${vare.produsent}</p>
+
+		<c:forEach var="emballasje" items="${vare.emballasjer}">
+            <p>${emballasje.kommentar} sorteres som ${emballasje.id.avfallstype}.</p>
+                    </c:forEach>
 	</div>
 </c:if>
 
