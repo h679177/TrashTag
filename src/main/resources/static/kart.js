@@ -11,5 +11,22 @@ document.addEventListener('DOMContentLoaded', function () {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
+
+    var markerCoordinates = [61.458024, 5.897591];
+    var marker = L.marker(markerCoordinates).addTo(map);
+    marker.bindPopup("<b>Returpunkt Tervatunet </b><br>Dette er en returpunkt.").openPopup();
+
+    var markerCoordinates = [61.459275, 5.888901];
+    var marker = L.marker(markerCoordinates).addTo(map);
+    marker.bindPopup("<b>Returpunkt HVL </b><br>Dette er en returpunkt.").openPopup();
+
+    var redirectButton = document.getElementById('redirectButton');
+    redirectButton.addEventListener('click', function() {
+        window.location.href = '/hjem'; // Redirect til hjemmesiden
+    });
+
+
+
+
 });
 

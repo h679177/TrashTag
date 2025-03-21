@@ -1,5 +1,8 @@
 /* Styles for the body */
 body {
+
+    overflow: hidden; /* Dette hindrer overskytende elementer fra å vises */
+
     background-color: #fff9f0; /* Diffuse green color */
     display: flex;
     justify-content: center;

@@ -11,4 +11,10 @@ public class KartController {
     public String kartVisning() {
         return "kart";
     }
+
+    @GetMapping("/redirectToHome")
+    public String redirectToHome() {
+        return "redirect:/hjem";
+    }
+
 }
