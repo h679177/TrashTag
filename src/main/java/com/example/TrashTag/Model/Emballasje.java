@@ -1,48 +1,73 @@
 package com.example.TrashTag.Model;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.io.Serial;
+import java.io.Serializable;
 
 @Entity
 @Table(name ="emballasje", schema = "vareinformasjon")
 public class Emballasje {
 
-    @Id
-    @Column(name = "ean_nummer")
-    private String eanNummer;
+    @Embeddable
+    public static  class EmballasjePK implements Serializable {
+        @Column(name = "ean_nummer")
+        private String eanNummer;
 
-    @Id
-    @Column(name = "avfallstype")
-    String avfallstype;
+        @Column(name = "avfallstype")
+        private String avfallstype;
+
+        public EmballasjePK() {}
+
+        public EmballasjePK(String eanNummer, String avfallstype) {
+            this.eanNummer = eanNummer;
+            this.avfallstype = avfallstype;
+        }
+
+        public String getEanNummer() {
+            return eanNummer;
+        }
+
+        public void setEanNummer(String eanNummer) {
+            this.eanNummer = eanNummer;
+        }
+
+        public String getAvfallstype() {
+            return avfallstype;
+        }
+
+        public void setAvfallstype(String avfallstype) {
+            this.avfallstype = avfallstype;
+        }
+    }
+
+    @EmbeddedId
+    private  EmballasjePK id;
 
     @Column(name = "kommentar")
-    String kommentar;
+    private String kommentar;
 
-    public Emballasje() {}
+    @MapsId("eanNummer")
+    @ManyToOne
+    @JoinColumn(name="ean_nummer")
+    private Vare vare;
+
+    public Emballasje() {
+        this.id = new EmballasjePK();
+    }
 
     public Emballasje(String eanNummer, String avfallstype, String kommentar) {
-        this.eanNummer = eanNummer;
-        this.avfallstype = avfallstype;
+        this.id = new EmballasjePK(eanNummer, avfallstype);
         this.kommentar = kommentar;
     }
 
-    public String getEanNummer() {
-        return eanNummer;
+    public EmballasjePK getId() {
+        return id;
     }
 
-    public void setEAN_Nummer(String eanNummer) {
-        this.eanNummer = eanNummer;
-    }
-
-    public String getAvfallstype() {
-        return avfallstype;
-    }
-
-    public void setAvfallstype(String avfallstype) {
-        this.avfallstype = avfallstype;
+    public void setId(EmballasjePK id) {
+        this.id = id;
     }
 
     public String getKommentar() {
@@ -53,5 +78,11 @@ public class Emballasje {
         this.kommentar = kommentar;
     }
 
+    public Vare getVare() {
+        return vare;
+    }
 
+    public void setVare(Vare vare) {
+        this.vare = vare;
+    }
 }

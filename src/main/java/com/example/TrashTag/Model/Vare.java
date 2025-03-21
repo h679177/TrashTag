@@ -1,9 +1,9 @@
 package com.example.TrashTag.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "vare", schema = "vareinformasjon")
@@ -16,10 +16,13 @@ public class Vare {
     private String varenavn;
     private String produsent;
 
+    @OneToMany(mappedBy = "vare", cascade =  CascadeType.ALL, fetch =  FetchType.EAGER)
+    private List<Emballasje> emballasjer = new ArrayList<>();
+
     public Vare() {
     }
 
-    public Vare(String eanNummer, String varenavn, String produsent, String kategori) {
+    public Vare(String eanNummer, String varenavn, String produsent) {
         this.eanNummer = eanNummer;
         this.varenavn = varenavn;
         this.produsent = produsent;
@@ -50,4 +53,9 @@ public class Vare {
     public void setProdusent(String produsent) {
         this.produsent = produsent;
     }
+
+    public List<Emballasje> getEmballasjer() {
+        return emballasjer;
+    }
+
 }
