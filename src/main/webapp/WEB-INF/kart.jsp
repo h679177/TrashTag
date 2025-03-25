@@ -17,7 +17,6 @@
     <a href="kart">KART</a>
     <a href="profil">PROFIL</a>
 </nav>
-<h1>AVFALLSSTASJONER NÆR DEG</h1>
 <!-- Navigasjonsbar -->
 <nav>
     <a href="hjem">HJEM</a>
@@ -32,6 +31,7 @@
 <!-- Kartet vises her -->
 <div id="map"></div>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
 <script src="kart.js"></script>
 
 <%@ include file="footer.jsp" %>

@@ -4,17 +4,18 @@
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <link href="simple.css" rel="stylesheet" type="text/css" />
+    <link href="design.css" rel="stylesheet" type="text/css" />
     <title>Profil</title>
 </head>
 
 <body>
     <nav>
-        <a href="hjem.jsp">Hjem</a> |
-        <a href="vareSok.jsp">Søk</a> |
-        <a href="kart.jsp">Kart</a> |
-        <a href="profil.jsp">Profil</a>
+        <a href="hjem">Hjem</a> |
+        <a href="vareSok">Søk</a> |
+        <a href="kart">Kart</a> |
+        <a href="profil">Profil</a>
     </nav>
 </form>
+    <%@ include file="footer.jsp" %>
 </body>
 </html>

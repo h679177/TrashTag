@@ -14,6 +14,11 @@ public class VareController {
     @Autowired
     private VareRepo vareRepo;
 
+    @GetMapping("/hjem")
+    public String hjem(){
+        return "hjem";
+    }
+
     @GetMapping("/vareSok")
     public String vareSok(@RequestParam(value = "EAN", required = false) String EAN, Model model) {
         if (EAN != null) {
