@@ -1,11 +1,16 @@
 package com.example.TrashTag.Controllere;
 
+import com.example.TrashTag.Service.KartService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 //Import;
 
 @Controller
 public class KartController {
+
+    @Autowired
+    private KartService kartService;
 
     @GetMapping("/kart")
     public String kartVisning() {
@@ -16,5 +21,7 @@ public class KartController {
     public String redirectToHome() {
         return "redirect:/hjem";
     }
+
+
 
 }

@@ -32,9 +32,9 @@ public class VareService {
         private final Vare vare;
         private final String errorMelding;
 
-        private VareResponse(Vare vare, String errorMessage) {
+        private VareResponse(Vare vare, String errorMelding) {
             this.vare = vare;
-            this.errorMelding = errorMessage;
+            this.errorMelding = errorMelding;
         }
 
         public static VareResponse medVare(Vare vare) {
