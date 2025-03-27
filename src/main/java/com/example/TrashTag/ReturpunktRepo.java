@@ -1,5 +1,6 @@
 package com.example.TrashTag;
 
+import com.example.TrashTag.Model.Avfallstype;
 import com.example.TrashTag.Model.Returpunkt;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,5 +16,8 @@ public interface ReturpunktRepo extends JpaRepository<Returpunkt, Integer> {
             "ORDER BY koordinater <-> point(:latitude, :longitude) " +
             "LIMIT 10", nativeQuery = true)
     List<Returpunkt> finnNermestePunkt(double latitude, double longitude);
+
+    @Query("SELECT a FROM Avfallstype a")
+    List<Avfallstype> hentAlleTyper();
 
 }

@@ -29,6 +29,15 @@
 <script src="kart.js"></script>
 
 <h2>Collection Points</h2>
+<form method="post" action="avfallstypeValg">
+    <c:forEach var="kategori" items="${kategorier}">
+    <div>
+        <input type="checkbox" name="kategori" value="${kategori.avfallstype}" />
+            ${kategori.avfallstype}
+    </div>
+</c:forEach>
+<input type="submit" value="Submit" />
+</form>
 <table border="1">
     <thead>
     <tr>

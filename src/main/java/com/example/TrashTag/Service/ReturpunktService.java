@@ -1,5 +1,6 @@
 package com.example.TrashTag.Service;
 
+import com.example.TrashTag.Model.Avfallstype;
 import com.example.TrashTag.Model.Returpunkt;
 import com.example.TrashTag.ReturpunktRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,10 @@ public class ReturpunktService {
 
     public List<Returpunkt> finnNermestePunkt(double latitude, double longitude) {
         return returpunktRepo.finnNermestePunkt(latitude, longitude);
+    }
+
+    public List<Avfallstype> hentAlleTyper() {
+        return returpunktRepo.hentAlleTyper();
     }
 
 

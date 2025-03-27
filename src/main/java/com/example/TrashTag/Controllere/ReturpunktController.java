@@ -15,6 +15,7 @@ public class ReturpunktController {
     @GetMapping("/kart")
     public String kartVisning(Model model) {
         model.addAttribute("returpunkter", returpunktService.finnNermestePunkt(61.454624, 5.865735));
+        model.addAttribute("kategorier", returpunktService.hentAlleTyper());
         return "kart";
     }
 
@@ -22,6 +23,13 @@ public class ReturpunktController {
     public String redirectToHome() {
         return "redirect:/hjem";
     }
+/*
+    @PostMapping("/avfallstypeValg")
+    public String avfallstypeValg(Model model) {
+        return "kart";
+    }
+
+ */
 
 
 
