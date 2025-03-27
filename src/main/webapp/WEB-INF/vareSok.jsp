@@ -9,6 +9,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+	<script src="vareSok.js"></script>
 	<title>Vare søk</title>
 
 	<script>
@@ -28,7 +30,7 @@
 </nav>
 <h1>SØK ETTER VARE</h1>
 <form method="get">
-	<input type="text" name="EAN" placeholder="EAN-nummer">
+	<input type="text" id="eanInput" name="EAN" placeholder="EAN-nummer">
 
 	<button type="submit">Søk</button>
 </form>
@@ -71,6 +73,14 @@
 		Elektronikk
 	</button>
 </div>
+
+<!-- Knapp for å starte kamera-skanning -->
+<button type="button" id="camera-button">📷 Skann med kamera</button>
+<!-- Container for kameravisning -->
+<div id="scanner-container">
+    <video id="scanner" autoplay playsinline></video>
+</div>
+
 
 <!-- Hidden trash info sections -->
 <div id="plastInfo" class="trash-info">

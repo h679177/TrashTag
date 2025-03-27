@@ -40,3 +40,43 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Styling for kamera-knappen */
+#camera-button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    font-size: 1.2em;
+    padding: 12px;
+    margin: 10px auto; /* Sentrerer knappen */
+    background-color: #338e45;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#camera-button:hover {
+    background-color: #286e34;
+}
+
+/* Styling for kamera-container */
+#scanner-container {
+    display: none; /* Skjult til knappen trykkes */
+    width: 100%;
+    max-width: 400px;
+    height: 300px; /* Juster høyde etter behov */
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Kamera-video */
+#scanner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
