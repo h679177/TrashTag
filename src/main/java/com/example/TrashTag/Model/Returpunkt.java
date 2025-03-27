@@ -2,7 +2,10 @@ package com.example.TrashTag.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "returpunkt", schema = "vareinformasjon")
@@ -14,6 +17,9 @@ public class Returpunkt {
     private String navn;
     private int postnummer;
     private String koordinater;
+
+    @ManyToMany
+    private Set<Avfallstype> avfallstype;
 
     public Returpunkt() {}
 
