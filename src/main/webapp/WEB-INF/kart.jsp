@@ -18,12 +18,6 @@
     <a href="profil">PROFIL</a>
 </nav>
 <!-- Navigasjonsbar -->
-<nav>
-    <a href="hjem">HJEM</a>
-    <a href="vareSok">SØK</a>
-    <a href="kart">KART</a>
-    <a href="profil">PROFIL</a>
-</nav>
 
 <!-- Tittel for siden -->
 <h1>Returpunkt</h1>
@@ -33,6 +27,26 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
 <script src="kart.js"></script>
+
+<h2>Collection Points</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Postal Code</th>
+        <th>Coordinates</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="returpunkt" items="${returpunkter}">
+        <tr>
+            <td>${returpunkt.navn}</td>
+            <td>${returpunkt.postnummer}</td>
+            <td>${returpunkt.koordinater}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
 
 <%@ include file="footer.jsp" %>
 </body>

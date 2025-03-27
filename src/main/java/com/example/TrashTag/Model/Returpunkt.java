@@ -11,16 +11,16 @@ public class Returpunkt {
     @Id
     private Integer returid;
 
-    private String adresse;
-    private int postnr;
+    private String navn;
+    private int postnummer;
     private String koordinater;
 
     public Returpunkt() {}
 
-    public Returpunkt(Integer returid, String adresse, int postnr, String koordinater) {
+    public Returpunkt(Integer returid, String navn, int postnr, String koordinater) {
         this.returid = returid;
-        this.adresse = adresse;
-        this.postnr = postnr;
+        this.navn = navn;
+        this.postnummer = postnr;
         this.koordinater = koordinater;
     }
 
@@ -33,20 +33,20 @@ public class Returpunkt {
         this.returid = returid;
     }
 
-    public String getAdresse() {
-        return adresse;
+    public String getNavn() {
+        return navn;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public void setNavn(String navn) {
+        this.navn = navn;
     }
 
-    public int getPostnr() {
-        return postnr;
+    public int getPostnummer() {
+        return postnummer;
     }
 
-    public void setPostnr(int postnr) {
-        this.postnr = postnr;
+    public void setPostnummer(int postnummer) {
+        this.postnummer = postnummer;
     }
 
     public String getKoordinater() {

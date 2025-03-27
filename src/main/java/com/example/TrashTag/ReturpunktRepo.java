@@ -11,7 +11,7 @@ import java.util.List;
 public interface ReturpunktRepo extends JpaRepository<Returpunkt, Integer> {
 
     @Query(value = "SELECT * " +
-            "FROM returpunkt " +
+            "FROM vareinformasjon.returpunkt " +
             "ORDER BY koordinater <-> point(:latitude, :longitude) " +
             "LIMIT 10", nativeQuery = true)
     List<Returpunkt> finnNermestePunkt(double latitude, double longitude);
