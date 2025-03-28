@@ -21,9 +21,12 @@ public interface ReturpunktRepo extends JpaRepository<Returpunkt, Integer> {
     List<Avfallstype> hentAlleTyper();
 
     /*
-    @Query("SELECT r FROM returpunkter r WHERE r.avfallstype(r.avfallstype IN :valg) GROUP BY r.")
+    @Query("SELECT r.navn, r.postnummer, r.koordinater FROM returpunkter r " +
+        "JOIN r.avfallstyper a " +
+        "WHERE a.avfallstype IN :valg) " +
+        "GROUP BY r.navn, r.postnummer, r.koordinater")
     Set<Avfallstype> hentReturpunkter(@Param("returpunkter") List<String> valg);
+*/
 
-     */
 
 }

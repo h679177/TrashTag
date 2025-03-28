@@ -14,7 +14,10 @@ public class ReturpunktService {
     @Autowired
     private ReturpunktRepo returpunktRepo;
 
-    public List<Returpunkt> finnNermestePunkt(double latitude, double longitude) {
+    public List<Returpunkt> finnNermestePunkt(String koordinat) {
+        String[] splittet = koordinat.split(", ");
+        double latitude = Double.parseDouble(splittet[0]);
+        double longitude = Double.parseDouble(splittet[1]);
         return returpunktRepo.finnNermestePunkt(latitude, longitude);
     }
 

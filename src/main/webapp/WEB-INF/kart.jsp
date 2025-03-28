@@ -38,24 +38,33 @@
 </c:forEach>
 <input type="submit" value="Submit" />
 </form>
-<table border="1">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Postal Code</th>
-        <th>Coordinates</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="returpunkt" items="${returpunkter}">
+
+<form method="get">
+	<input type="text" id="koordInput" name="koordinat" placeholder="Koordinater">
+
+	<button type="submit">Søk</button>
+</form>
+
+<c:if test="${not empty returpunkter}">
+    <table border="1">
+        <thead>
         <tr>
-            <td>${returpunkt.navn}</td>
-            <td>${returpunkt.postnummer}</td>
-            <td>${returpunkt.koordinater}</td>
+            <th>Name</th>
+            <th>Postal Code</th>
+            <th>Coordinates</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach var="returpunkt" items="${returpunkter}">
+            <tr>
+                <td>${returpunkt.navn}</td>
+                <td>${returpunkt.postnummer}</td>
+                <td>${returpunkt.koordinater}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</c:if>
 
 <%@ include file="footer.jsp" %>
 </body>
