@@ -1,14 +1,15 @@
 /* general theme/layout */
     /* Styles for the body */
     body {
-        background-color: #fff9f0; /* Diffuse green color */
+        background-color: #fff9f0;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* Full height of the viewport */
+        padding: 0;
         margin: 0; /* Remove default margin */
-        font-family: Arial, sans-serif; /* Optional: set a font */
+        font-family: Nunito, sans-serif; /* Optional: set a font */
         flex-direction: column; /* Arrange items vertically */
+        color: #656965;
     }
 
     /* navigation bar */
@@ -17,7 +18,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        background-color: #656965; /* Optional: to make the background color visible */
+        background-color: #656965;
         padding: 10px; /* Optional: to add some spacing around the links */
         text-align: center; /* Optional: to center the links horizontally */
     }
@@ -25,27 +26,33 @@
         text-decoration: none;
         color: #fff5ea;
         padding: 150px;
+
     }
 
     /* Styles for the header text */
     h1 {
 
         font-family: "Italiana", sans-serif;
-        font-weight: 400;
+        font-weight: 550;
         font-style: normal;
 
         color: #656965;
         font-size: 50px; /* Header font size */
-        margin-bottom: 20px; /* Space between header and search bar */
-        margin-top: 500px;
+        margin-bottom: 0px; /* Space between header and search bar */
+        margin-top: 250px;
     }
 
-    /* Styles for the form */
-    form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    h2 {
+        font-family: "nunito", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+
+        color: #656965;
+        font-size: 20px; /* Header font size */
+        margin-bottom: 70px; /* Space between header and search bar */
     }
+
+
 
 
 /* vareSok  */
@@ -63,7 +70,7 @@
     button {
         padding: 10px 20px; /* Padding inside the button */
         background-color: #656965; /* Slightly darker green color */
-        color: white; /* Text color inside the button */
+        color: #fff9f0; /* Text color inside the button */
         border: none; /* Remove default border */
         border-radius: 5px; /* Rounded corners */
         cursor: pointer; /* Change cursor shape on hover */
@@ -72,14 +79,75 @@
 
     /* Button hover effect */
     button:hover {
-        background-color: #656965; /* Darker green when hovered */
+        background-color: #8a8f8a;
     }
 
 
 /* kart */
+
+    /* Styles for the form */
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 50px;
+    }
+
+    input[type="checkbox"] {
+        margin-bottom: 10px;
+        margin-right: 5px;
+        margin-left: 30px;
+    }
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #656965;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 40px;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #8a8f8a; /* Slightly darker green when hovered */
+    }
+
+    /* Table styling */
+    .styled-table {
+        width: 50%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        text-align: left;
+        background-color: #fff;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 12px 20px;
+    }
+
+    .styled-table th {
+        background-color: #656965;
+        color: white;
+    }
+
+    .styled-table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .styled-table tbody tr:hover {
+        background-color: #ddd;
+    }
+
+
     #map {
         height: 40%;
         width: 40%;
         min-height: 500px;
         min-width: 500px;
     }
+
+
+

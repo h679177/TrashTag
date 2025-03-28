@@ -22,7 +22,7 @@
             <h4>Legal</h4>
             <ul>
                 <li><a href="/privacy-policy">Privacy Policy</a></li>
-                <li><a href="/terms-of-service">Terms of Service</a></li>
+                <li><a href="/terms-of-service">Bruksvilkar</a></li>
             </ul>
         </div>
 

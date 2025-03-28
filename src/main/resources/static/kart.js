@@ -19,14 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var markerCoordinates = [61.459275, 5.888901];
     var marker = L.marker(markerCoordinates).addTo(map);
     marker.bindPopup("<b>Returpunkt HVL </b><br>Dette er en returpunkt.").openPopup();
-
-    var redirectButton = document.getElementById('redirectButton');
-    redirectButton.addEventListener('click', function() {
-        window.location.href = '/hjem'; // Redirect til hjemmesiden
-    });
+    ;})
 
 
 
 
-});
+
 
