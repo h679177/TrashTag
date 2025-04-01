@@ -7,7 +7,7 @@
         align-items: center;
         padding: 0;
         margin: 0; /* Remove default margin */
-        font-family: Nunito, sans-serif; /* Optional: set a font */
+        font-family: Nunito, sans-serif;
         flex-direction: column; /* Arrange items vertically */
         color: #656965;
     }
@@ -19,13 +19,14 @@
         left: 0;
         width: 100%;
         background-color: #656965;
-        padding: 10px; /* Optional: to add some spacing around the links */
         text-align: center; /* Optional: to center the links horizontally */
     }
     nav a {
         text-decoration: none;
         color: #fff5ea;
-        padding: 150px;
+        padding: 10px 20px; /* 10px top/bottom, 20px left/right */
+        display: inline-block;
+        margin: 0 150px; /* Adds spacing between links */
 
     }
 
@@ -39,17 +40,18 @@
         color: #656965;
         font-size: 50px; /* Header font size */
         margin-bottom: 0px; /* Space between header and search bar */
-        margin-top: 250px;
+        margin-top: 300px;
     }
 
     h2 {
         font-family: "nunito", sans-serif;
-        font-weight: 400;
+        font-weight: 300;
         font-style: normal;
 
         color: #656965;
         font-size: 20px; /* Header font size */
         margin-bottom: 70px; /* Space between header and search bar */
+        margin-top: 0px;
     }
 
 
@@ -64,6 +66,7 @@
         border-radius: 5px; /* Rounded corners */
         width: 250px; /* Width of the search bar */
         margin-right: 10px; /* Space between the search bar and button */
+        margin-top: 50px;
     }
 
     /* Styles for the button */
@@ -75,6 +78,7 @@
         border-radius: 5px; /* Rounded corners */
         cursor: pointer; /* Change cursor shape on hover */
         font-size: 1em; /* Button text size */
+        margin-top: 50px;
     }
 
     /* Button hover effect */

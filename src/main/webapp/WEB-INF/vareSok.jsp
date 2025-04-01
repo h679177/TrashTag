@@ -43,13 +43,12 @@
 
 <c:if test="${not empty vare}">
 	<div class="trash-info" style="display: block;">
-		<h3>Produktdetaljer</h3>
-		<p><strong>EAN:</strong> ${vare.eanNummer}</p>
-		<p><strong>Produktnavn:</strong> ${vare.varenavn}</p>
-		<p><strong>Produsent:</strong> ${vare.produsent}</p>
+		<h3>PRODUKTDETALJER</h3>
+		<p><i>Produktnavn: ${vare.varenavn}</i></p>
+		<p><i>Produsent: ${vare.produsent}</i></p>
 
 		<c:forEach var="emballasje" items="${vare.emballasjer}">
-            <p>${emballasje.kommentar} sorteres som ${emballasje.id.avfallstype}.</p>
+			<p><strong>${emballasje.kommentar} sorteres som ${emballasje.id.avfallstype}.</strong></p>
                     </c:forEach>
 	</div>
 </c:if>

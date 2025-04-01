@@ -29,7 +29,7 @@
                     ${kategori.avfallstype}
             </div>
         </c:forEach>
-        <input type="submit" value="Legg til" />
+        <input type="submit" value="Legg til" /> 
     </form>
 
 <form method="get">
