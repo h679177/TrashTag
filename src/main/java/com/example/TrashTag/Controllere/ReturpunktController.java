@@ -31,10 +31,11 @@ public class ReturpunktController {
     }
 
     @PostMapping("/avfallstypeValg")
-    public String avfallstypeValg(@RequestParam("kategori") List<String> valgtAvfallstype, @RequestParam(value = "koordinat", required = false) String koordinat,  Model model) {
+    public String avfallstypeValg(@RequestParam(value = "kategori", required = false) List<String> valgtAvfallstype, @RequestParam(value = "koordinat", required = false) String koordinat,  Model model) {
         if(koordinat != null) {
-            Set<Returpunkt> returpunkter = returpunktService.finnNermestePunkt(koordinat, valgtAvfallstype);
+            Set<Returpunkt> returpunkter = returpunktService.finnReturpunktFraInput(koordinat, valgtAvfallstype);
             model.addAttribute("returpunkter", returpunkter);
+
         }
 
         return "kart";

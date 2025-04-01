@@ -24,16 +24,8 @@ public interface ReturpunktRepo extends JpaRepository<Returpunkt, Integer> {
     @Query("SELECT a FROM Avfallstype a")
     List<Avfallstype> hentAlleTyper();
 
-    @Query("SELECT r FROM Returpunkt r JOIN r.avfallstype a WHERE a.avfallstype IN :avfallstyper")
-    Set<Returpunkt> sokEtterAvfallstype(@Param("avfallstyper") List<String> avfallstyper);
-
-    /*
-    @Query("SELECT r.navn, r.postnummer, r.koordinater FROM returpunkter r " +
-        "JOIN r.avfallstyper a " +
-        "WHERE a.avfallstype IN :valg) " +
-        "GROUP BY r.navn, r.postnummer, r.koordinater")
-    Set<Avfallstype> hentReturpunkter(@Param("returpunkter") List<String> valg);
-*/
+    @Query("SELECT r FROM Returpunkt r JOIN r.avfallstype a WHERE a.avfallstype IN :avfallstyper AND r.postnummer = :postnr")
+    Set<Returpunkt> sokEtterPostNr(@Param("avfallstyper") List<String> avfallstyper, @Param("postnr") int postnr);
 
 
 }
