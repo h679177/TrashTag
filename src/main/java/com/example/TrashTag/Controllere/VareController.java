@@ -21,6 +21,7 @@ public class VareController {
 
     @GetMapping("/vareSok")
     public String vareSok(@RequestParam(value = "EAN", required = false) String EAN, Model model) {
+
         if (EAN != null) {
             VareService.VareResponse response = vareService.Sok(EAN);
             if (response.getErrorMelding() != null) {

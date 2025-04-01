@@ -1,9 +1,6 @@
 package com.example.TrashTag.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Set;
 
@@ -19,6 +16,12 @@ public class Returpunkt {
     private String koordinater;
 
     @ManyToMany
+    @JoinTable(
+            name = "sorteringssteder",
+            schema = "vareinformasjon",
+            joinColumns = @JoinColumn(name = "returid"),  // Adjust column name if needed
+            inverseJoinColumns = @JoinColumn(name = "avfallstype")  // Adjust column name if needed
+    )
     private Set<Avfallstype> avfallstype;
 
     public Returpunkt() {}
