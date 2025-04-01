@@ -33,4 +33,8 @@ public class Avfallstype {
         this.avfallstype = avfallstype;
     }
 
+    @Override
+    public String toString() {
+        return avfallstype;
+    }
 }

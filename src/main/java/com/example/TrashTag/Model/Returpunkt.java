@@ -65,4 +65,9 @@ public class Returpunkt {
     public void setKoordinater(String koordinater) {
         this.koordinater = koordinater;
     }
+
+    public Set<Avfallstype> getAvfallstype() {
+        return avfallstype;
+    }
 }
+
