@@ -29,7 +29,7 @@
                     ${kategori.avfallstype}
             </div>
         </c:forEach>
-        <input type="submit" value="Legg til" /> 
+        <input type="submit" value="Legg til" />
     </form>
 
 <form method="get">
@@ -55,6 +55,11 @@
                     <td>${returpunkt.navn}</td>
                     <td>${returpunkt.postnummer}</td>
                     <td>${returpunkt.koordinater}</td>
+                    <td>
+                        <c:forEach var="type" items="${returpunkt.avfallstype}">
+                        ${type}, </c:forEach>
+                    </td>
+
                 </tr>
             </c:forEach>
         </tbody>

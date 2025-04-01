@@ -13,11 +13,13 @@ import java.util.Set;
 @Repository
 public interface ReturpunktRepo extends JpaRepository<Returpunkt, Integer> {
 
-    @Query(value = "SELECT * " +
-            "FROM vareinformasjon.returpunkt " +
+    @Query(value = "SELECT r.* " +
+            "FROM vareinformasjon.returpunkt r " +
+            "INNER JOIN vareinformasjon.sorteringssteder s ON r.returid = s.returid " +
+            "WHERE s.avfallstype IN :avfallstyper " +
             "ORDER BY koordinater <-> point(:latitude, :longitude) " +
             "LIMIT 10", nativeQuery = true)
-    List<Returpunkt> finnNermestePunkt(double latitude, double longitude);
+    Set<Returpunkt> finnNermestePunkt(double latitude, double longitude, @Param("avfallstyper") List<String> avfallstyper);
 
     @Query("SELECT a FROM Avfallstype a")
     List<Avfallstype> hentAlleTyper();

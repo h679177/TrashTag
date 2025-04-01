@@ -15,11 +15,11 @@ public class ReturpunktService {
     @Autowired
     private ReturpunktRepo returpunktRepo;
 
-    public List<Returpunkt> finnNermestePunkt(String koordinat) {
+    public Set<Returpunkt> finnNermestePunkt(String koordinat,  List<String> avfallstyper) {
         String[] splittet = koordinat.split(", ");
         double latitude = Double.parseDouble(splittet[0]);
         double longitude = Double.parseDouble(splittet[1]);
-        return returpunktRepo.finnNermestePunkt(latitude, longitude);
+        return returpunktRepo.finnNermestePunkt(latitude, longitude, avfallstyper);
     }
 
     public List<Avfallstype> hentAlleTyper() {
