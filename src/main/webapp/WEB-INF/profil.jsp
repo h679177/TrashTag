@@ -15,7 +15,6 @@
         <a href="kart">Kart</a> |
         <a href="profil">Profil</a>
     </nav>
-</form>
     <%@ include file="footer.jsp" %>
 </body>
 </html>
