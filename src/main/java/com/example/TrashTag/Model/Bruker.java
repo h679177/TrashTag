@@ -1,7 +1,11 @@
 package com.example.TrashTag.Model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "bruker", schema = "brukerinformasjon")
 public class Bruker {
 
     @Id
