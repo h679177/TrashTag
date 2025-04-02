@@ -28,10 +28,11 @@
 	<a href="kart">KART</a>
 	<a href="profil">PROFIL</a>
 </nav>
+
 <h1>SØK ETTER VARE</h1>
+
 <form method="get">
 	<input type="text" id="eanInput" name="EAN" placeholder="EAN-nummer">
-
 	<button type="submit">Søk</button>
 </form>
 
@@ -49,37 +50,26 @@
 
 		<c:forEach var="emballasje" items="${vare.emballasjer}">
 			<p><strong>${emballasje.kommentar} sorteres som ${emballasje.id.avfallstype}.</strong></p>
-                    </c:forEach>
+		</c:forEach>
 	</div>
 </c:if>
 
-<!-- Trash category buttons with expandable info -->
+<!-- Trash category buttons + kamera-knapp -->
 <div class="trash-buttons">
-	<button onclick="toggleInfo('plastInfo')">
-		Plast
-	</button>
-	<button onclick="toggleInfo('pappInfo')">
-		Papp
-	</button>
-	<button onclick="toggleInfo('glassMetallInfo')">
-		Glass/
-		Metall
-	</button>
-	<button onclick="toggleInfo('matavfallInfo')">
-		Matavfall
-	</button>
-	<button onclick="toggleInfo('elektronikkInfo')">
-		Elektronikk
-	</button>
+	<button onclick="toggleInfo('plastInfo')">Plast</button>
+	<button onclick="toggleInfo('pappInfo')">Papp</button>
+	<button onclick="toggleInfo('glassMetallInfo')">Glass/Metall</button>
+	<button onclick="toggleInfo('matavfallInfo')">Matavfall</button>
+	<button onclick="toggleInfo('elektronikkInfo')">Elektronikk</button>
+
+	<!-- Kamera-knapp lagt her med ikon og stil som matcher -->
+	<button type="button" id="camera-button">Kamera</button>
 </div>
 
-<!-- Knapp for å starte kamera-skanning -->
-<button type="button" id="camera-button">📷 Skann med kamera</button>
-<!-- Container for kameravisning -->
+<!-- Kamera-container -->
 <div id="scanner-container">
-    <video id="scanner" autoplay playsinline></video>
+	<video id="scanner" autoplay playsinline></video>
 </div>
-
 
 <!-- Hidden trash info sections -->
 <div id="plastInfo" class="trash-info">
