@@ -29,13 +29,10 @@
                     ${kategori.avfallstype}
             </div>
         </c:forEach>
-        <input type="submit" value="Legg til" />
-    </form>
 
-<form method="get">
-    <input type="text" id="koordInput" name="koordinat" placeholder="Koordinater">
+        <input type="text" id="koordInput" name="koordinat" placeholder="Koordinater">
 
-    <button type="submit">Søk</button>
+        <button type="submit">Søk</button>
 </form>
 
 <c:if test="${not empty returpunkter}">
