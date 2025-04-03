@@ -45,6 +45,7 @@
                 <th>NAVN</th>
                 <th>POSTNUMMER</th>
                 <th>KOORDINATER</th>
+                <th>TAR IMOT</th>
             </tr>
         </thead>
         <tbody>

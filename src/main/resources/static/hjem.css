@@ -38,7 +38,7 @@
 
 /* avsnitt */
 .text-container {
-    width: 30%; /* Adjust as needed */
+    width: 60%; /* Adjust as needed */
     margin: auto; /* Centers the container */
     text-align: center; /* Ensures text inside stays left-aligned */
     display: block; /* Ensures it's a block-level element */
