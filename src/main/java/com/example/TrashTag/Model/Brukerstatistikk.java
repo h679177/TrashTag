@@ -1,8 +1,6 @@
 package com.example.TrashTag.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -11,6 +9,7 @@ import java.time.LocalDate;
 public class Brukerstatistikk {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int nummer;
 
     private String brukernavn;
@@ -20,8 +19,7 @@ public class Brukerstatistikk {
 
     public Brukerstatistikk() {}
 
-    public Brukerstatistikk(int nummer, String brukernavn, LocalDate dato, String avfallstype, double vekt) {
-        this.nummer = nummer;
+    public Brukerstatistikk(String brukernavn, LocalDate dato, String avfallstype, double vekt) {
         this.brukernavn = brukernavn;
         this.dato = dato;
         this.avfallstype = avfallstype;
