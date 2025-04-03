@@ -2,7 +2,7 @@ package com.example.TrashTag.Service;
 
 import com.example.TrashTag.Model.Avfallstype;
 import com.example.TrashTag.Model.Returpunkt;
-import com.example.TrashTag.ReturpunktRepo;
+import com.example.TrashTag.Repositories.ReturpunktRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package com.example.TrashTag.Service;
 
 import com.example.TrashTag.Model.Vare;
-import com.example.TrashTag.VareRepo;
+import com.example.TrashTag.Repositories.VareRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

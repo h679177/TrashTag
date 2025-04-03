@@ -1,4 +1,4 @@
-package com.example.TrashTag;
+package com.example.TrashTag.Repositories;
 
 import com.example.TrashTag.Model.Vare;
 import org.springframework.data.jpa.repository.JpaRepository;

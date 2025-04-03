@@ -73,19 +73,24 @@ button:hover {
 
 /* Styling for kamera-knappen */
 #camera-button {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    font-size: 1.2em;
-    padding: 12px;
-    margin: 10px auto; /* Sentrerer knappen */
-    background-color: #338e45;
+    background-color: #656965;
     color: white;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 60px;
+    height: 60px;
     text-align: center;
 }
+
+
 
 #camera-button:hover {
     background-color: #286e34;

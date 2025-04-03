@@ -1,4 +1,4 @@
-package com.example.TrashTag;
+package com.example.TrashTag.Repositories;
 
 import com.example.TrashTag.Model.Avfallstype;
 import com.example.TrashTag.Model.Returpunkt;
