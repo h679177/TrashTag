@@ -1,7 +1,7 @@
 package com.example.TrashTag.Controllere;
 
 import com.example.TrashTag.Model.Bruker;
-import com.example.TrashTag.Model.BrukerValidering;
+import com.example.TrashTag.Util.BrukerValidering;
 import com.example.TrashTag.Service.BrukerService;
 import com.example.TrashTag.Service.PassordService;
 import jakarta.validation.Valid;

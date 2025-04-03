@@ -1,4 +1,4 @@
-package com.example.TrashTag.Model;
+package com.example.TrashTag.Util;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
