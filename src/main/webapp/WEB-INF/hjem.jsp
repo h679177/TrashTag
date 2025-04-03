@@ -32,12 +32,17 @@
             TrashTag er en applikasjon som hjelper deg med å få oversikt over
             hvor mye du resirkulerer, og ditt eget avfallsforbruk. Her finner du også
             informasjon om produkt, og hvordan du skal resirkulere det produktet
-            til best mulig grad. Det er mye avfall som blir produsert i hver husstand i
+            til best mulig evne. Det er mye avfall som blir produsert i hver husstand i
             Norge i dag. Vi mener dette kan hjelpe med å gjøre oss mer bevisste på
             hvordan vi som forbukere kan gjøre små endringer i hverdagen, for
             sammen å skape en større innvirkning. Det begynner alltid i det små.
         </p>
+    </div>
 
+<div class="row">
+    <div class="column-img"><img src="/images/grid1.jpg" alt="Description"></div>
+    <div class="column">
+        <h2>Hvordan fungerer det?</h2>
         <p>
             Ved å veie avfallet ditt og registrere hvilket materiale det er når du
             kaster det, vil du få opp statestikk på brukerkontoen din. Her vil du
@@ -50,14 +55,9 @@
         </p>
     </div>
 
-<h2>Avfallsregistrering</h2>
-    <h3> - Se hvor mye du resirkulerer</h3>
-<p>
-    Med TrashTag kan brukere registrere hvor mye søppel de kaster basert på vekt og materiale.
-    Enten det er papp, glass eller restavfall, får du en detaljert statistikk over ditt personlige avfallsforbruk.
-    Statistikken viser hvor mye du har resirkulert, hvilke materialer du kaster mest av,
-    og gir deg innsikt i hvordan du kan forbedre dine resirkuleringsvaner.
-</p>
+
+
+</div>
 
 <h2>Varesøk<h3> - Finn ut hvordan du resikulerer riktig</h3></h2>
 <p>

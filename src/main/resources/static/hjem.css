@@ -23,7 +23,7 @@
 
 /* Navbar links */
 .topnav a {
-    float: right;
+    float: left;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -47,3 +47,34 @@
 .text-container p {
     text-align: left; /* Ensures text is left-aligned */
 }
+
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+
+}
+.column p {
+    text-align: left;
+    font-size: 18px; /* Adjust font size */
+}
+
+.column-img {
+    width: 100%; /* Makes image responsive */
+    max-width: 500px; /* Adjust max size as needed */
+}
+
+.row {
+    margin: 100px 50px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
