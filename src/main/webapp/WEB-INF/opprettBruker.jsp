@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html lang="no">
 <head>
     <meta charset="UTF-8">
@@ -19,48 +20,68 @@
 <form action="lagBruker" method="post" id="bruker">
     <fieldset>
         <p>Brukernavn<br><input type="text" name="brukernavn" value="${bruker.brukernavn}">
-            <spring:hasBindErrors name="bruker">
+            <c:if test="${not empty bindingResult.getFieldError('brukernavn')}">
         <div style="color: red;">
-            <spring:message code="brukernavn"/>
+            <c:forEach var="error" items="${bindingResult.getFieldErrors('brukernavn')}">
+                <c:out value="${error.defaultMessage}"/><br/>
+            </c:forEach>
         </div>
-        </spring:hasBindErrors>
+        </c:if>
         </p>
-        <p>Fornavn<br><input type="text" name="fornavn" value="${bruker.fornavn}">
-            <spring:hasBindErrors name="bruker">
+        <p>Fornavn <br><input type="text" name="fornavn" value="${bruker.fornavn}">
+            <c:if test="${not empty bindingResult.getFieldError('fornavn')}">
         <div style="color: red;">
-            <spring:message code="fornavn"/>
+            <c:forEach var="error" items="${bindingResult.getFieldErrors('fornavn')}">
+                <c:out value="${error.defaultMessage}"/><br/>
+            </c:forEach>
         </div>
-        </spring:hasBindErrors>
+        </c:if>
         </p>
         <p>Etternavn<br><input type="text" name="etternavn" value="${bruker.etternavn}">
-            <spring:hasBindErrors name="bruker">
+            <c:if test="${not empty bindingResult.getFieldError('etternavn')}">
         <div style="color: red;">
-            <spring:message code="etternavn"/>
+            <c:forEach var="error" items="${bindingResult.getFieldErrors('etternavn')}">
+                <c:out value="${error.defaultMessage}"/><br/>
+            </c:forEach>
         </div>
-        </spring:hasBindErrors>
+        </c:if>
         </p>
         <p>Post nummer<br><input type="text" name="postnr" value="${bruker.postnr}">
-            <spring:hasBindErrors name="bruker">
+            <c:if test="${not empty bindingResult.getFieldError('postnr')}">
         <div style="color: red;">
-            <spring:message code="postnr"/>
+            <c:forEach var="error" items="${bindingResult.getFieldErrors('postnr')}">
+                <c:out value="${error.defaultMessage}"/><br/>
+            </c:forEach>
         </div>
-        </spring:hasBindErrors>
+        </c:if>
         </p>
         <p>Gatenavn<br><input type="text" name="gatenavn" value="${bruker.gatenavn}">
-            <spring:hasBindErrors name="bruker">
+            <c:if test="${not empty bindingResult.getFieldError('gatenavn')}">
         <div style="color: red;">
-            <spring:message code="gatenavn"/>
+            <c:forEach var="error" items="${bindingResult.getFieldErrors('gatenavn')}">
+                <c:out value="${error.defaultMessage}"/><br/>
+            </c:forEach>
         </div>
-        </spring:hasBindErrors>
+        </c:if>
         </p>
         <p>Passord<br><input type="password" name="passord">
-            <spring:hasBindErrors name="bruker">
+            <c:if test="${not empty bindingResult.getFieldError('passord')}">
         <div style="color: red;">
-            <spring:message code="passord"/>
+            <c:forEach var="error" items="${bindingResult.getFieldErrors('passord')}">
+                <c:out value="${error.defaultMessage}"/><br/>
+            </c:forEach>
         </div>
-        </spring:hasBindErrors>
+        </c:if>
         </p>
-        <p>Repetert Passord<br><input type="password" name="repPassord"></p>
+        <p>Repetert Passord<br><input type="password" name="repPassord">
+            <c:if test="${not empty bindingResult.getFieldError('repPassord')}">
+        <div style="color: red;">
+            <c:forEach var="error" items="${bindingResult.getFieldErrors('repPassord')}">
+                <c:out value="${error.defaultMessage}"/><br/>
+            </c:forEach>
+        </div>
+        </c:if>
+        </p>
 
         <input type="submit" value="Opprett bruker"/>
     </fieldset>

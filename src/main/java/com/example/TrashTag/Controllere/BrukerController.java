@@ -32,20 +32,33 @@ public class BrukerController {
 
     @PostMapping("/lagBruker")
     public String lagBruker(@Valid @ModelAttribute("bruker") BrukerValidering brukerVal, BindingResult bindingResult, Model model) {
+
         if (bindingResult.hasErrors()) {
-            model.addAttribute("feilmelding", bindingResult);
             model.addAttribute("bruker", brukerVal);
+            model.addAttribute("bindingResult", bindingResult);
+            return "opprettBruker";
+        }
+
+        // Validate passwords
+        if (!passordService.erPassordInputLike(brukerVal.getPassord(), brukerVal.getRepPassord())) {
+            bindingResult.rejectValue("repPassord", "error.repPassord", "Passordene er ikke like!");
+        }
+
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("bruker", brukerVal);
+            model.addAttribute("bindingResult", bindingResult);
             return "opprettBruker";
         }
 
         String salt = passordService.genererTilfeldigSalt();
         String hash = passordService.hashMedSalt(brukerVal.getPassord(), salt);
 
-        Bruker godkjentBruker = new Bruker(brukerVal.getBrukernavn(), brukerVal.getFornavn(), brukerVal.getEtternavn(), brukerService.formaterPostnr(brukerVal.getPostnr()), brukerVal.getGatenavn(), false, brukerVal.getNabolag(), false, hash, salt);
+        Bruker godkjentBruker = new Bruker(brukerVal.getBrukernavn(), brukerVal.getFornavn(), brukerVal.getEtternavn(),
+                brukerService.formaterPostnr(brukerVal.getPostnr()), brukerVal.getGatenavn(), false, brukerVal.getNabolag(),
+                false, hash, salt);
         brukerService.lagreBruker(godkjentBruker);
 
-        return "redirect:profil";
+        return "redirect:/profil";
     }
-
 
 }
