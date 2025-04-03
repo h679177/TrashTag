@@ -13,25 +13,29 @@ public class Bruker {
 
     private String fornavn;
     private String etternavn;
-    private int postnr;
+    private int postnummer;
     private String gatenavn;
     private boolean deler_data;
     private boolean deler_navn;
     private String nabolag;
+    private String hash;
+    private String salt;
 
     public Bruker() {}
 
     public Bruker(String brukernavn, String fornavn, String etternavn,
                   int postnr, String gatenavn, boolean deler_data,
-                  String nabolag, boolean deler_navn) {
+                  String nabolag, boolean deler_navn,  String hash, String salt) {
         this.brukernavn = brukernavn;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
-        this.postnr = postnr;
+        this.postnummer = postnr;
         this.gatenavn = gatenavn;
         this.deler_data = deler_data;
         this.nabolag = nabolag;
         this.deler_navn = deler_navn;
+        this.hash = hash;
+        this.salt = salt;
     }
 
 
@@ -60,11 +64,11 @@ public class Bruker {
     }
 
     public int getPostnr() {
-        return postnr;
+        return postnummer;
     }
 
     public void setPostnr(int postnr) {
-        this.postnr = postnr;
+        this.postnummer = postnr;
     }
 
     public String getGatenavn() {
@@ -98,4 +102,21 @@ public class Bruker {
     public void setDeler_navn(boolean deler_navn) {
         this.deler_navn = deler_navn;
     }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
 }
