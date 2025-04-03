@@ -9,13 +9,16 @@
 </head>
 
 <body>
-    <nav>
-        <a href="hjem">Hjem</a> |
-        <a href="vareSok">Søk</a> |
-        <a href="kart">Kart</a> |
-        <a href="profil">Profil</a>
-    </nav>
-</form>
+<div class="banner-img">
+    <div class="container">
+        <div class="topnav">
+            <a href="hjem">HJEM</a>
+            <a href="vareSok">SØK</a>
+            <a href="kart">KART</a>
+            <a href="profil">PROFIL</a>
+        </div>
+    </div>
+</div>
     <%@ include file="footer.jsp" %>
 </body>
 </html>

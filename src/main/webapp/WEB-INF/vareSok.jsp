@@ -28,7 +28,7 @@
 	<a href="kart">KART</a>
 	<a href="profil">PROFIL</a>
 </nav>
-<h1>SØK ETTER VARE</h1>
+<h2>SØK ETTER VARE</h2>
 <form method="get">
 	<input type="text" id="eanInput" name="EAN" placeholder="EAN-nummer">
 
@@ -43,7 +43,7 @@
 
 <c:if test="${not empty vare}">
 	<div class="trash-info" style="display: block;">
-		<h3>PRODUKTDETALJER</h3>
+		<h4>PRODUKTDETALJER</h4>
 		<p><i>Produktnavn: ${vare.varenavn}</i></p>
 		<p><i>Produsent: ${vare.produsent}</i></p>
 
@@ -83,23 +83,23 @@
 
 <!-- Hidden trash info sections -->
 <div id="plastInfo" class="trash-info">
-	<h3>Plastavfall</h3>
+	<h4>Plastavfall</h4>
 	<p>Plastemballasje bør skylles og sorteres i plastavfall. Store plastgjenstander går til gjenvinningsstasjon.</p>
 </div>
 <div id="pappInfo" class="trash-info">
-	<h3>Papp og papir</h3>
+	<h4>Papp og papir</h4>
 	<p>Papp, papir og kartong resirkuleres. Husk å fjerne plastbelegg før sortering.</p>
 </div>
 <div id="glassMetallInfo" class="trash-info">
-	<h3>Glass og metall</h3>
+	<h4>Glass og metall</h4>
 	<p>Skyll glass og metall før det kastes i riktig beholder. Metall kan også leveres til gjenvinningsstasjon.</p>
 </div>
 <div id="matavfallInfo" class="trash-info">
-	<h3>Matavfall</h3>
+	<h4>Matavfall</h4>
 	<p>Matavfall kastes i bioavfall. Unngå plastposer – bruk papirposer eller bioposer.</p>
 </div>
 <div id="elektronikkInfo" class="trash-info">
-	<h3>Elektronikkavfall</h3>
+	<h4>Elektronikkavfall</h4>
 	<p>Elektronikk må leveres til spesialavfall. Ikke kast i restavfall.</p>
 </div>
 

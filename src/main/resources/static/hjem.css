@@ -1,0 +1,49 @@
+.banner-img {
+    background-image: url("images/banner.jpg");
+    min-height: 380px;
+    width: 100%; /* Ensure full width */
+    display: block; /* Ensures it takes up space */
+    background-repeat: no-repeat;
+    background-size: cover; /* Stretch image to cover the full area */
+    background-position: center; /* Optional: Ensure the image is centered */
+    margin-bottom: 70px;
+}
+
+/* Position the navbar container inside the image */
+.container {
+    position: absolute;
+    margin: 20px;
+    width: auto;
+}
+
+/* The navbar */
+.topnav {
+    overflow: hidden;
+}
+
+/* Navbar links */
+.topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #fff9f0;
+    color: #656965;
+}
+
+/* avsnitt */
+.text-container {
+    width: 30%; /* Adjust as needed */
+    margin: auto; /* Centers the container */
+    text-align: center; /* Ensures text inside stays left-aligned */
+    display: block; /* Ensures it's a block-level element */
+}
+
+.text-container p {
+    text-align: left; /* Ensures text is left-aligned */
+}
