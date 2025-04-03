@@ -53,4 +53,8 @@ public class PassordService {
 
         return hash.equals(hashMedSalt(passord, salt));
     }
+
+    public boolean erPassordInputLike(String passord, String repPassord) {
+        return passord.equals(repPassord);
+    }
 }

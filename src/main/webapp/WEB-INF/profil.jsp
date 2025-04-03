@@ -19,6 +19,21 @@
         </div>
     </div>
 </div>
+
+<form method="post" action="registrerResirkulering">
+
+    <select name="avfallstype">
+        <c:forEach var="kategori" items="${kategorier}">
+            <option value="${kategori.avfallstype}">${kategori.avfallstype}</option>
+        </c:forEach>
+    </select>
+    <br/><br/>
+
+    <input type="number" id="vektInput" name="vekt" placeholder="Vekt">
+
+    <button type="submit">Registrer</button>
+</form>
+
     <%@ include file="footer.jsp" %>
 </body>
 </html>

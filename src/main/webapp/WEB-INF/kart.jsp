@@ -22,7 +22,7 @@
 
     <h2>AVFALLSSTASJONER</h2>
 
-    <h3>FINN DE NÆR DEG</h3>
+    <h3>FINN NÆR DEG</h3>
     <form method="post" action="avfallstypeValg">
         <c:forEach var="kategori" items="${kategorier}">
             <div>
@@ -31,7 +31,7 @@
             </div>
         </c:forEach>
 
-        <input type="text" id="koordInput" name="koordinat" placeholder="Koordinater">
+        <input type="number" id="vektInput" name="vekt" placeholder="Vekt avfall">
 
         <button type="submit">Søk</button>
     </form>
@@ -45,6 +45,7 @@
                 <th>NAVN</th>
                 <th>POSTNUMMER</th>
                 <th>KOORDINATER</th>
+                <th>TAR IMOT</th>
             </tr>
         </thead>
         <tbody>
