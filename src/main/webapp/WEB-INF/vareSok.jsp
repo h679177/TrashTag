@@ -8,7 +8,7 @@
 	<link href="vareSok.css" rel="stylesheet" type="text/css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Italiana&family=Notable&display=swap" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
 	<script src="vareSok.js"></script>
 	<title>Vare søk</title>
@@ -28,10 +28,11 @@
 	<a href="kart">KART</a>
 	<a href="profil">PROFIL</a>
 </nav>
+
 <h1>SØK ETTER VARE</h1>
+
 <form method="get">
 	<input type="text" id="eanInput" name="EAN" placeholder="EAN-nummer">
-
 	<button type="submit">Søk</button>
 </form>
 
@@ -43,64 +44,52 @@
 
 <c:if test="${not empty vare}">
 	<div class="trash-info" style="display: block;">
-		<h3>Produktdetaljer</h3>
-		<p><strong>EAN:</strong> ${vare.eanNummer}</p>
-		<p><strong>Produktnavn:</strong> ${vare.varenavn}</p>
-		<p><strong>Produsent:</strong> ${vare.produsent}</p>
+		<h4>PRODUKTDETALJER</h4>
+		<p><i>Produktnavn: ${vare.varenavn}</i></p>
+		<p><i>Produsent: ${vare.produsent}</i></p>
 
 		<c:forEach var="emballasje" items="${vare.emballasjer}">
-            <p>${emballasje.kommentar} sorteres som ${emballasje.id.avfallstype}.</p>
-                    </c:forEach>
+			<p><strong>${emballasje.kommentar} sorteres som ${emballasje.id.avfallstype}.</strong></p>
+		</c:forEach>
 	</div>
 </c:if>
 
-<!-- Trash category buttons with expandable info -->
+<!-- Trash category buttons + kamera-knapp -->
 <div class="trash-buttons">
-	<button onclick="toggleInfo('plastInfo')">
-		Plast
-	</button>
-	<button onclick="toggleInfo('pappInfo')">
-		Papp
-	</button>
-	<button onclick="toggleInfo('glassMetallInfo')">
-		Glass/
-		Metall
-	</button>
-	<button onclick="toggleInfo('matavfallInfo')">
-		Matavfall
-	</button>
-	<button onclick="toggleInfo('elektronikkInfo')">
-		Elektronikk
-	</button>
+	<button onclick="toggleInfo('plastInfo')">Plast</button>
+	<button onclick="toggleInfo('pappInfo')">Papp</button>
+	<button onclick="toggleInfo('glassMetallInfo')">Glass/Metall</button>
+	<button onclick="toggleInfo('matavfallInfo')">Matavfall</button>
+	<button onclick="toggleInfo('elektronikkInfo')">Elektronikk</button>
+
+	<!-- Kamera-knapp lagt her med ikon og stil som matcher -->
+	<button type="button" id="camera-button">Kamera</button>
 </div>
 
-<!-- Knapp for å starte kamera-skanning -->
-<button type="button" id="camera-button">📷 Skann med kamera</button>
-<!-- Container for kameravisning -->
+<!-- Kamera-container -->
 <div id="scanner-container">
-    <video id="scanner" autoplay playsinline></video>
+	<video id="scanner" autoplay playsinline></video>
 </div>
-
 
 <!-- Hidden trash info sections -->
 <div id="plastInfo" class="trash-info">
-	<h3>Plastavfall</h3>
+	<h4>Plastavfall</h4>
 	<p>Plastemballasje bør skylles og sorteres i plastavfall. Store plastgjenstander går til gjenvinningsstasjon.</p>
 </div>
 <div id="pappInfo" class="trash-info">
-	<h3>Papp og papir</h3>
+	<h4>Papp og papir</h4>
 	<p>Papp, papir og kartong resirkuleres. Husk å fjerne plastbelegg før sortering.</p>
 </div>
 <div id="glassMetallInfo" class="trash-info">
-	<h3>Glass og metall</h3>
+	<h4>Glass og metall</h4>
 	<p>Skyll glass og metall før det kastes i riktig beholder. Metall kan også leveres til gjenvinningsstasjon.</p>
 </div>
 <div id="matavfallInfo" class="trash-info">
-	<h3>Matavfall</h3>
+	<h4>Matavfall</h4>
 	<p>Matavfall kastes i bioavfall. Unngå plastposer – bruk papirposer eller bioposer.</p>
 </div>
 <div id="elektronikkInfo" class="trash-info">
-	<h3>Elektronikkavfall</h3>
+	<h4>Elektronikkavfall</h4>
 	<p>Elektronikk må leveres til spesialavfall. Ikke kast i restavfall.</p>
 </div>
 

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html lang="no">
 <head>
     <meta charset="UTF-8">
@@ -19,22 +20,18 @@
     <a href="profil">PROFIL</a>
 </nav>
 
-<h1>Profil</h1>
-
-<form method="post" action="registrerResirkulering">
-
-    <select name="avfallstype">
-        <c:forEach var="kategori" items="${kategorier}">
-            <option value="${kategori.avfallstype}">${kategori.avfallstype}</option>
-        </c:forEach>
-    </select>
-    <br/><br/>
-
-    <input type="number" id="vektInput" name="vekt" placeholder="Vekt">
-
-    <button type="submit">Registrer</button>
+<h1>Logg inn</h1>
+<p style="color:red;">
+    <c:forEach var="feilmelding" items="${feilmeldinger}">
+        ${feilmelding}<br>
+    </c:forEach></p>
+<form action="login" method="post">
+    <fieldset>
+        <p>Brukernavn: <br><input type="text" name="brukernavn"></p>
+        <p>Passord: <br><input type="password" name="passord"></p>
+        <input type="submit" value="Logg inn"/><br>
+    </fieldset>
 </form>
-
-    <%@ include file="footer.jsp" %>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

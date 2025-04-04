@@ -1,5 +1,35 @@
+
+/* Styles for the search bar */
+input[type="text"] {
+    padding: 10px; /* Padding inside the text box */
+    font-size: 1em; /* Text size in the text box */
+    border: 2px solid #656965; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    width: 250px; /* Width of the search bar */
+    margin-right: 10px; /* Space between the search bar and button */
+    margin-top: 50px;
+}
+
+/* Styles for the button */
+button {
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #656965; /* Slightly darker green color */
+    color: #fff9f0; /* Text color inside the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor shape on hover */
+    font-size: 1em; /* Button text size */
+    margin-top: 50px;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #8a8f8a;
+}
+
+
 .trash-buttons {
-    margin-top: 70px;
+    margin-top: 40px;
     margin-bottom: 100px;
     display: flex;
     gap: 15px;
@@ -43,19 +73,24 @@
 
 /* Styling for kamera-knappen */
 #camera-button {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    font-size: 1.2em;
-    padding: 12px;
-    margin: 10px auto; /* Sentrerer knappen */
-    background-color: #338e45;
+    background-color: #656965;
     color: white;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 60px;
+    height: 60px;
     text-align: center;
 }
+
+
 
 #camera-button:hover {
     background-color: #286e34;

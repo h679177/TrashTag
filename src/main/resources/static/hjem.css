@@ -1,0 +1,80 @@
+.banner-img {
+    background-image: url("images/banner.jpg");
+    min-height: 380px;
+    width: 100%; /* Ensure full width */
+    display: block; /* Ensures it takes up space */
+    background-repeat: no-repeat;
+    background-size: cover; /* Stretch image to cover the full area */
+    background-position: center; /* Optional: Ensure the image is centered */
+    margin-bottom: 70px;
+}
+
+/* Position the navbar container inside the image */
+.container {
+    position: absolute;
+    margin: 20px;
+    width: auto;
+}
+
+/* The navbar */
+.topnav {
+    overflow: hidden;
+}
+
+/* Navbar links */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #fff9f0;
+    color: #656965;
+}
+
+/* avsnitt */
+.text-container {
+    width: 60%; /* Adjust as needed */
+    margin: auto; /* Centers the container */
+    text-align: center; /* Ensures text inside stays left-aligned */
+    display: block; /* Ensures it's a block-level element */
+}
+
+.text-container p {
+    text-align: left; /* Ensures text is left-aligned */
+}
+
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+
+}
+.column p {
+    text-align: left;
+    font-size: 18px; /* Adjust font size */
+}
+
+.column-img {
+    width: 100%; /* Makes image responsive */
+    max-width: 500px; /* Adjust max size as needed */
+}
+
+.row {
+    margin: 100px 50px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+

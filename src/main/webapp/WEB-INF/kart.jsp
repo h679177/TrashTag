@@ -6,9 +6,10 @@
     <title>Returpunkt</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link href="design.css" rel="stylesheet" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="kart.css" rel="stylesheet" type="text/css" />
+    < <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Italiana&family=Notable&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigasjonsbar -->
@@ -21,7 +22,7 @@
 
     <h1>AVFALLSSTASJONER</h1>
 
-    <h2>FINN DE NÆR DEG</h2>
+    <h3>- finn en nær deg</h3>
     <form method="post" action="avfallstypeValg">
         <c:forEach var="kategori" items="${kategorier}">
             <div>
@@ -29,14 +30,11 @@
                     ${kategori.avfallstype}
             </div>
         </c:forEach>
-        <input type="submit" value="Legg til" />
+
+        <input type="number" id="vektInput" name="vekt" placeholder="Vekt avfall">
+
+        <button type="submit">Søk</button>
     </form>
-
-<form method="get">
-    <input type="text" id="koordInput" name="koordinat" placeholder="Koordinater">
-
-    <button type="submit">Søk</button>
-</form>
 
 <c:if test="${not empty returpunkter}">
 
@@ -47,6 +45,7 @@
                 <th>NAVN</th>
                 <th>POSTNUMMER</th>
                 <th>KOORDINATER</th>
+                <th>TAR IMOT</th>
             </tr>
         </thead>
         <tbody>
@@ -55,6 +54,11 @@
                     <td>${returpunkt.navn}</td>
                     <td>${returpunkt.postnummer}</td>
                     <td>${returpunkt.koordinater}</td>
+                    <td>
+                        <c:forEach var="type" items="${returpunkt.avfallstype}">
+                        ${type}, </c:forEach>
+                    </td>
+
                 </tr>
             </c:forEach>
         </tbody>
