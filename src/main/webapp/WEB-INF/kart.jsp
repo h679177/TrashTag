@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link href="design.css" rel="stylesheet" type="text/css" />
     <link href="kart.css" rel="stylesheet" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    < <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Italiana&family=Notable&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigasjonsbar -->
@@ -20,9 +20,9 @@
         <a href="profil">PROFIL</a>
     </nav>
 
-    <h2>AVFALLSSTASJONER</h2>
+    <h1>AVFALLSSTASJONER</h1>
 
-    <h3>FINN NÆR DEG</h3>
+    <h3>- finn en nær deg</h3>
     <form method="post" action="avfallstypeValg">
         <c:forEach var="kategori" items="${kategorier}">
             <div>

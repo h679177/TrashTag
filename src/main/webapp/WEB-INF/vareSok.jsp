@@ -8,7 +8,7 @@
 	<link href="vareSok.css" rel="stylesheet" type="text/css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Italiana&family=Notable&display=swap" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
 	<script src="vareSok.js"></script>
 	<title>Vare søk</title>
@@ -28,7 +28,9 @@
 	<a href="kart">KART</a>
 	<a href="profil">PROFIL</a>
 </nav>
-<h2>SØK ETTER VARE</h2>
+
+<h1>SØK ETTER VARE</h1>
+
 <form method="get">
 	<input type="text" id="eanInput" name="EAN" placeholder="EAN-nummer">
 	<button type="submit">Søk</button>

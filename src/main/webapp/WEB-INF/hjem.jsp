@@ -59,7 +59,7 @@
 
 </div>
 
-<h2>Varesøk<h3> - Finn ut hvordan du resikulerer riktig</h3></h2>
+<h2>Varesøk<h3> - finn ut hvordan du resikulerer riktig</h3></h2>
 <p>
     Usikker på hvordan et produkt skal sorteres?
     Med varesøket i TrashTag kan du enkelt søke opp produkter og få informasjon om hvordan de skal resirkuleres.
@@ -71,13 +71,13 @@
     Scanneren gjør resirkuleringen mindre tidkrevende.
 </p>
 
-<h2>Kart<h3> - Finn nærmeste avfallstasjon</h3></h2>
+<h2>Kart<h3> - finn nærmeste avfallstasjon</h3></h2>
 <p>
     TrashTag gir deg muligheten til å finne nærmeste avfallstasjon basert på postnummer, eller koordinater.
     Du kan også se hvilke typer materialer hver stasjon tar imot, slik at du enkelt kan planlegge hvor du skal levere avfallet ditt.
 </p>
 
-<h2>Personlig profil<h3> - Følg din egen utvikling</h3></h2>
+<h2>Personlig profil<h3> - følg din egen utvikling</h3></h2>
 <p>
     For å kunne få tilgang til all statistikk og funksjonalitet må brukerne opprette en profil.
     Med en personlig konto kan du følge med på hvor mye du har kastet over tid,
