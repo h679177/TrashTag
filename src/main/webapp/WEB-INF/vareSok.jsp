@@ -31,6 +31,11 @@
 
 <h1>SØK ETTER VARE</h1>
 
+<!-- scan-knapp -->
+<div class="scan-top-wrapper">
+	<button type="button" id="camera-button">Scan Vare</button>
+</div>
+
 <form method="get">
 	<input type="text" id="eanInput" name="EAN" placeholder="EAN-nummer">
 	<button type="submit">Søk</button>
@@ -54,16 +59,13 @@
 	</div>
 </c:if>
 
-<!-- Trash category buttons + kamera-knapp -->
+<!-- Trash category buttons -->
 <div class="trash-buttons">
 	<button onclick="toggleInfo('plastInfo')">Plast</button>
 	<button onclick="toggleInfo('pappInfo')">Papp</button>
 	<button onclick="toggleInfo('glassMetallInfo')">Glass/Metall</button>
 	<button onclick="toggleInfo('matavfallInfo')">Matavfall</button>
 	<button onclick="toggleInfo('elektronikkInfo')">Elektronikk</button>
-
-	<!-- Kamera-knapp lagt her med ikon og stil som matcher -->
-	<button type="button" id="camera-button">Kamera</button>
 </div>
 
 <!-- Kamera-container -->

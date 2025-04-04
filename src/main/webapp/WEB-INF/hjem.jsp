@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<div class="banner-img">
+<div class="TrashTagImage">
     <div class="container">
         <div class="topnav">
             <a href="hjem">HJEM</a>
@@ -39,6 +39,18 @@
         </p>
     </div>
 
+
+<!-- Scan bilde og knapp -->
+<div class="scan-section">
+    <h2>Skann en vare</h2>
+    <img src="images/ScanBilde.png" alt="Skann strekkode" class="scan-image">
+    <p>Trykk for å bruke kameraet og finn ut hvordan produktet skal resirkuleres</p>
+    <a href="vareSok">
+        <button class="scan-button">Skann vare</button>
+    </a>
+</div>
+
+
 <div class="row">
     <div class="column-img"><img src="/images/grid1.jpg" alt="Description"></div>
     <div class="column">
@@ -54,7 +66,6 @@
             i hvordan ulike produkter skal resirkuleres riktig.
         </p>
     </div>
-
 
 
 </div>
