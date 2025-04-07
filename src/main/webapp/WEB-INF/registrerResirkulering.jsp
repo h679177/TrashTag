@@ -27,7 +27,8 @@
 </c:if>
 
 <form method="post" action="registrerResirkulering">
-    <select name="avfallstype">
+    <label for="avfallstype">Avfallstype</label>
+    <select id="avfallstype" name="avfallstype">
         <c:forEach var="kategori" items="${kategorier}">
             <option value="${kategori.avfallstype}">${kategori.avfallstype}</option>
         </c:forEach>
@@ -35,6 +36,7 @@
     <br/><br/>
 
     <input type="number" id="vektInput" name="vekt" placeholder="Vekt">
+    <br/><br/>
     <button type="submit">Registrer</button>
 </form>
 
@@ -43,6 +45,10 @@
 			${melding}
 	</div>
 </c:if>
+
+<form action="${pageContext.request.contextPath}/profil" method="get">
+        <button type="submit">Tilbake til profil</button>
+    </form>
 
 <%@ include file="footer.jsp" %>
 </body>
