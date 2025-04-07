@@ -32,7 +32,7 @@ public class Bruker {
 
     public Bruker(String brukernavn, String fornavn, String etternavn,
                   int postnr, String gatenavn, boolean deler_data,
-                  String nabolag, boolean deler_navn,  String hash, String salt) {
+                  String nabolag, boolean deler_navn) {
         this.brukernavn = brukernavn;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
@@ -41,8 +41,6 @@ public class Bruker {
         this.deler_data = deler_data;
         this.nabolag = nabolag;
         this.deler_navn = deler_navn;
-        this.hash = hash;
-        this.salt = salt;
     }
 
 

@@ -75,10 +75,11 @@ public class BrukerController {
                 bruker.getGatenavn(),
                 false,
                 bruker.getNabolag(),
-                false,
-                hash,
-                salt
+                false
         );
+
+        godkjentBruker.setHash(hash);
+        godkjentBruker.setSalt(salt);
 
         brukerService.lagreBruker(godkjentBruker);
         LoginUtil.loggInnBruker(request, bruker);
@@ -104,22 +105,15 @@ public class BrukerController {
     }
 
     @PostMapping("/slettBruker")
-    public String slettBruker(HttpSession session) {
+    public String slettBruker(HttpSession session, RedirectAttributes ra) {
         Bruker bruker = (Bruker) session.getAttribute("bruker"); // Retrieve the user from the session
         if (bruker != null) {
-            // Log the ID or username for debugging
-            System.out.println("Deleting user: " + bruker.getBrukernavn());
-
-            // Delete the user
             brukerService.slettBruker(bruker);
-
-            // Log out the user after deletion
             LoginUtil.loggUtBruker(session);
+            ra.addFlashAttribute("feilmeldinger", "Bruker er slettet");
         } else {
-            System.out.println("No user found in session to delete.");
+            return "redirect:loggInn";
         }
-
-        // Redirect to the login page
         return "redirect:loggInn";
     }
 }
