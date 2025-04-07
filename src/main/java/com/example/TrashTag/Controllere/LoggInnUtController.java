@@ -49,7 +49,7 @@ public class LoggInnUtController {
             ra.addFlashAttribute("feilmeldinger", "Brukernavn/Passord er feil");
             return "redirect:/loggInn";
         }
-        LoginUtil.loggInnBruker(request, brukernavn);
+        LoginUtil.loggInnBruker(request, bruker);
 
         return "redirect:/profil";
     }

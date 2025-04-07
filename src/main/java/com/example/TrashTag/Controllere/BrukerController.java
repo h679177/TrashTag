@@ -4,11 +4,11 @@ import com.example.TrashTag.Model.Bruker;
 import com.example.TrashTag.Model.Brukerstatistikk;
 import com.example.TrashTag.Service.BrukerService;
 import com.example.TrashTag.Service.PassordService;
-import jakarta.servlet.http.HttpSession;
 import com.example.TrashTag.Service.ReturpunktService;
 import com.example.TrashTag.Util.InputValidering;
 import com.example.TrashTag.Util.LoginUtil;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -81,7 +81,7 @@ public class BrukerController {
         );
 
         brukerService.lagreBruker(godkjentBruker);
-        LoginUtil.loggInnBruker(request, bruker.getBrukernavn());
+        LoginUtil.loggInnBruker(request, bruker);
         return "redirect:profil";
     }
 
@@ -95,5 +95,30 @@ public class BrukerController {
         brukerService.registrerResirkulering(oppføring);
 
         return "profil";
+    }
+
+    @PostMapping("/oppdaterBruker")
+    public String oppdaterBruker()  {
+        return "profil";
+    }
+
+    @PostMapping("/slettBruker")
+    public String slettBruker(HttpSession session) {
+        Bruker bruker = (Bruker) session.getAttribute("bruker"); // Retrieve the user from the session
+        if (bruker != null) {
+            // Log the ID or username for debugging
+            System.out.println("Deleting user: " + bruker.getBrukernavn());
+
+            // Delete the user
+            brukerService.slettBruker(bruker);
+
+            // Log out the user after deletion
+            LoginUtil.loggUtBruker(session);
+        } else {
+            System.out.println("No user found in session to delete.");
+        }
+
+        // Redirect to the login page
+        return "redirect:loggInn";
     }
 }

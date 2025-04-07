@@ -24,5 +24,12 @@ public class BrukerService {
         statistikkRepo.save(stat);
     }
 
+    public void oppdaterBruker(Bruker bruker) {
+        return;
+    }
+
+    public void slettBruker(Bruker bruker) {
+        brukerRepo.delete(bruker);
+    }
 
 }

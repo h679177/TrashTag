@@ -43,7 +43,19 @@
         <input type="number" id="vektInput" name="vekt" placeholder="Vekt">
         <button type="submit">Registrer</button>
     </form>
+    <form method="post" action="slettBruker" style="display:inline;" onsubmit="return confirmDelete();">
+        <button type="submit">Slett Bruker</button>
+    </form>
 </c:if>
+
+
+
+<script>
+    function confirmDelete() {
+        return confirm("Er du sikker på at du vil slette brukeren? Dette kan ikke angres, og alle lagrede data vil gå tapt.");
+    }
+</script>
+
 
     <%@ include file="footer.jsp" %>
 </body>
