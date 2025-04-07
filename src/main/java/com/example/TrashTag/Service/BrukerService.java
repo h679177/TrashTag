@@ -25,7 +25,7 @@ public class BrukerService {
     }
 
     public void oppdaterBruker(Bruker bruker) {
-        return;
+
     }
 
     public void slettBruker(Bruker bruker) {

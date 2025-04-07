@@ -39,19 +39,26 @@
             <button type="submit">Ny registrering</button>
     </form>
 
-    <form method="post" action="slettBruker" style="display:inline;" onsubmit="return confirmDelete();">
-        <button type="submit">Slett Bruker</button>
-    </form>
+    <c:if test="${not empty bruker}">
+    <div class="bruker-info" style="display: block;">
+    <h4>Din informasjon</h4>
+    <p><i>${bruker.brukernavn}</i></p>
+    <p><i>${bruker.fornavn} ${' '} ${bruker.etternavn}</i></p>
+        <p><i>${bruker.gatenavn}, ${bruker.postnummer}</i></p>
+        <c:if test="${bruker.deler_data == true}">
+            <p style="display:inline;">Ditt nabolag: <c:out value="${bruker.nabolag}"/></p>
+        </c:if>
+        <c:if test="${bruker.deler_data == false}">
+            <p><i>Du er ikke med i et nabolag</i></p>
+        </c:if>
+        <br>
+        <form action="${pageContext.request.contextPath}/redigerBruker" method="get">
+            <button type="submit">Rediger informasjon</button>
+        </form>
+
+    </div>
+    </c:if>
 </c:if>
-
-
-
-<script>
-    function confirmDelete() {
-        return confirm("Er du sikker på at du vil slette brukeren? Dette kan ikke angres, og alle lagrede data vil gå tapt.");
-    }
-</script>
-
 
     <%@ include file="footer.jsp" %>
 </body>

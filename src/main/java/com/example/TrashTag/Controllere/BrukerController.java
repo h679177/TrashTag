@@ -42,6 +42,11 @@ public class BrukerController {
         return "opprettBruker";
     }
 
+    @GetMapping("/redigerBruker")
+    public String redigerBruker() {
+        return "redigerBruker";
+    }
+
     @PostMapping("/lagBruker")
     public String lagBruker(
             @Valid @ModelAttribute("bruker") Bruker bruker,

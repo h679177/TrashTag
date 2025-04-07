@@ -50,7 +50,7 @@ public class LoggInnUtController {
             return "redirect:/loggInn";
         }
         LoginUtil.loggInnBruker(request, bruker);
-
+        model.addAttribute("bruker-info", bruker);
         return "redirect:/profil";
     }
 
