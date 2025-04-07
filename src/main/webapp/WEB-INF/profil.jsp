@@ -24,6 +24,9 @@
     <form action="${pageContext.request.contextPath}/loggInn" method="get">
         <button type="submit">Logg inn</button>
     </form>
+    <form action="${pageContext.request.contextPath}/opprettBruker" method="get">
+        <button type="submit">Opprett bruker</button>
+    </form>
 
 </c:if>
 <c:if test="${not empty username}">
