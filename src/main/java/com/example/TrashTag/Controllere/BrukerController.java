@@ -87,10 +87,11 @@ public class BrukerController {
 
     @PostMapping("/registrerResirkulering")
     public String registrerResirkulering(@RequestParam("avfallstype") String valgtAvfallstype,
-                                         @RequestParam("vekt") double vekt, Model model) {
+                                         @RequestParam("vekt") double vekt,
+                                         HttpSession session) {
 
         LocalDate idag = LocalDate.now();
-        String brukernavn = "princecharming";
+        String brukernavn = session.getAttribute("username").toString();
         Brukerstatistikk oppføring = new Brukerstatistikk(brukernavn, idag, valgtAvfallstype, vekt);
         brukerService.registrerResirkulering(oppføring);
 
