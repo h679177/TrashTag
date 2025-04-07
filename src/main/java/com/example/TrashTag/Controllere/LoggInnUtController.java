@@ -54,7 +54,7 @@ public class LoggInnUtController {
         return "redirect:/profil";
     }
 
-    @PostMapping("/logout")
+    @PostMapping("/loggUt")
     public String loggUt(HttpSession session, RedirectAttributes ra) {
 
         LoginUtil.loggUtBruker(session);
@@ -62,4 +62,5 @@ public class LoggInnUtController {
         ra.addFlashAttribute("feilmeldinger", "Du er nå logget ut");
         return "redirect:/loggInn";
     }
+
 }

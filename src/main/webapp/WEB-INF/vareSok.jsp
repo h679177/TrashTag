@@ -30,7 +30,12 @@
 </nav>
 
 <h1>SØK ETTER VARE</h1>
-
+<c:if test="${not empty username}">
+    <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
+    <form action="loggUt" method="post" style="display:inline;">
+        <button type="submit">Logg Ut</button>
+    </form>
+</c:if>
 <!-- scan-knapp -->
 <div class="scan-top-wrapper">
 	<button type="button" id="camera-button">Scan Vare</button>

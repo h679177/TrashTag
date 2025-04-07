@@ -23,6 +23,14 @@
     <h1>AVFALLSSTASJONER</h1>
 
     <h3>- finn en nær deg</h3>
+    <h2>AVFALLSSTASJONER</h2>
+    <c:if test="${not empty username}">
+        <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
+        <form action="loggUt" method="post" style="display:inline;">
+            <button type="submit">Logg Ut</button>
+        </form>
+    </c:if>
+    <h3>FINN DE NÆR DEG</h3>
     <form method="post" action="avfallstypeValg">
         <c:forEach var="kategori" items="${kategorier}">
             <div>

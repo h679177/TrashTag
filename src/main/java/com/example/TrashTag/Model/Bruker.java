@@ -3,6 +3,7 @@ package com.example.TrashTag.Model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "bruker", schema = "brukerinformasjon")
@@ -20,6 +21,12 @@ public class Bruker {
     private String nabolag;
     private String hash;
     private String salt;
+
+    @Transient
+    private String passord;
+
+    @Transient
+    private String repPassord;
 
     public Bruker() {}
 
@@ -63,12 +70,13 @@ public class Bruker {
         this.etternavn = etternavn;
     }
 
-    public int getPostnr() {
+
+    public int getPostnummer() {
         return postnummer;
     }
 
-    public void setPostnr(int postnr) {
-        this.postnummer = postnr;
+    public void setPostnummer(int postnummer) {
+        this.postnummer = postnummer;
     }
 
     public String getGatenavn() {
@@ -119,4 +127,19 @@ public class Bruker {
         this.salt = salt;
     }
 
+    public String getPassord() {
+        return passord;
+    }
+
+    public void setPassord(String passord) {
+        this.passord = passord;
+    }
+
+    public String getRepPassord() {
+        return repPassord;
+    }
+
+    public void setRepPassord(String repPassord) {
+        this.repPassord = repPassord;
+    }
 }

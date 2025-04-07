@@ -20,73 +20,38 @@
     <a href="profil">PROFIL</a>
 </nav>
 
-<h1>Opprett bruker</h1>
+<h2>Opprett bruker</h2><p style="color:red;">
+
+    <c:if test="${not empty feilmeldinger}">
+        <c:forEach var="feilmelding" items="${feilmeldinger}">
+            ${feilmelding}<br>
+        </c:forEach>
+    </c:if>
+</p>
+
 <form action="lagBruker" method="post" id="bruker">
     <fieldset>
-        <p>Brukernavn<br><input type="text" name="brukernavn" value="${bruker.brukernavn}">
-            <c:if test="${not empty bindingResult.getFieldError('brukernavn')}">
-        <div style="color: red;">
-            <c:forEach var="error" items="${bindingResult.getFieldErrors('brukernavn')}">
-                <c:out value="${error.defaultMessage}"/><br/>
-            </c:forEach>
-        </div>
-        </c:if>
+        <p>Brukernavn<br>
+            <input type="text" name="brukernavn" value="${bruker.brukernavn}">
         </p>
-        <p>Fornavn <br><input type="text" name="fornavn" value="${bruker.fornavn}">
-            <c:if test="${not empty bindingResult.getFieldError('fornavn')}">
-        <div style="color: red;">
-            <c:forEach var="error" items="${bindingResult.getFieldErrors('fornavn')}">
-                <c:out value="${error.defaultMessage}"/><br/>
-            </c:forEach>
-        </div>
-        </c:if>
+        <p>Fornavn<br>
+            <input type="text" name="fornavn" value="${bruker.fornavn}">
         </p>
-        <p>Etternavn<br><input type="text" name="etternavn" value="${bruker.etternavn}">
-            <c:if test="${not empty bindingResult.getFieldError('etternavn')}">
-        <div style="color: red;">
-            <c:forEach var="error" items="${bindingResult.getFieldErrors('etternavn')}">
-                <c:out value="${error.defaultMessage}"/><br/>
-            </c:forEach>
-        </div>
-        </c:if>
+        <p>Etternavn<br>
+            <input type="text" name="etternavn" value="${bruker.etternavn}">
         </p>
-        <p>Post nummer<br><input type="text" name="postnr" value="${bruker.postnr}">
-            <c:if test="${not empty bindingResult.getFieldError('postnr')}">
-        <div style="color: red;">
-            <c:forEach var="error" items="${bindingResult.getFieldErrors('postnr')}">
-                <c:out value="${error.defaultMessage}"/><br/>
-            </c:forEach>
-        </div>
-        </c:if>
+        <p>Postnummer<br>
+            <input type="text" name="postnummer" value="${bruker.postnummer}">
         </p>
-        <p>Gatenavn<br><input type="text" name="gatenavn" value="${bruker.gatenavn}">
-            <c:if test="${not empty bindingResult.getFieldError('gatenavn')}">
-        <div style="color: red;">
-            <c:forEach var="error" items="${bindingResult.getFieldErrors('gatenavn')}">
-                <c:out value="${error.defaultMessage}"/><br/>
-            </c:forEach>
-        </div>
-        </c:if>
+        <p>Gatenavn<br>
+            <input type="text" name="gatenavn" value="${bruker.gatenavn}">
         </p>
-        <p>Passord<br><input type="password" name="passord">
-            <c:if test="${not empty bindingResult.getFieldError('passord')}">
-        <div style="color: red;">
-            <c:forEach var="error" items="${bindingResult.getFieldErrors('passord')}">
-                <c:out value="${error.defaultMessage}"/><br/>
-            </c:forEach>
-        </div>
-        </c:if>
+        <p>Passord<br>
+            <input type="password" name="passord">
         </p>
-        <p>Repetert Passord<br><input type="password" name="repPassord">
-            <c:if test="${not empty bindingResult.getFieldError('repPassord')}">
-        <div style="color: red;">
-            <c:forEach var="error" items="${bindingResult.getFieldErrors('repPassord')}">
-                <c:out value="${error.defaultMessage}"/><br/>
-            </c:forEach>
-        </div>
-        </c:if>
+        <p>Repetert Passord<br>
+            <input type="password" name="repPassord">
         </p>
-
         <input type="submit" value="Opprett bruker"/>
     </fieldset>
 </form>

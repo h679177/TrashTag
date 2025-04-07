@@ -27,6 +27,12 @@
 
 <h1>TrashTag</h1>
 <h3>for smartere resirkulering</h3>
+<c:if test="${not empty username}">
+    <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
+    <form action="loggUt" method="post" style="display:inline;">
+        <button type="submit">Logg Ut</button>
+    </form>
+</c:if>
     <div class="text-container">
         <p>
             TrashTag er en applikasjon som hjelper deg med å få oversikt over

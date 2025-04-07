@@ -21,8 +21,4 @@ public class BrukerService {
 
     public void registrerResirkulering(Brukerstatistikk stat) {statistikkRepo.save(stat);}
 
-    public int formaterPostnr(String postnr) {
-        int postnrInt = Integer.parseInt(postnr);
-        return postnrInt;
-    }
 }

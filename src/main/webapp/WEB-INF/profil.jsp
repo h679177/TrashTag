@@ -20,7 +20,12 @@
 </nav>
 
 <h1>Profil</h1>
-
+<c:if test="${not empty username}">
+    <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
+    <form action="loggUt" method="post" style="display:inline;">
+        <button type="submit">Logg Ut</button>
+    </form>
+</c:if>
 <form method="post" action="registrerResirkulering">
 
     <select name="avfallstype">
