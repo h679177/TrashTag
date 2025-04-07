@@ -33,8 +33,7 @@ public class BrukerController {
     private ReturpunktService returpunktService;
 
     @GetMapping("/profil")
-    public String profilVisning(Model model) {
-        model.addAttribute("kategorier", returpunktService.hentAlleTyper());
+    public String profilVisning() {
         return "profil";
     }
 
@@ -86,17 +85,25 @@ public class BrukerController {
         return "redirect:profil";
     }
 
+    @GetMapping("/registrerResirkulering")
+    public String visResirkRegistrering(Model model) {
+        model.addAttribute("kategorier", returpunktService.hentAlleTyper());
+        return "registrerResirkulering";
+    }
+
     @PostMapping("/registrerResirkulering")
     public String registrerResirkulering(@RequestParam("avfallstype") String valgtAvfallstype,
                                          @RequestParam("vekt") double vekt,
-                                         HttpSession session) {
+                                         HttpSession session,
+                                         RedirectAttributes ra) {
 
         LocalDate idag = LocalDate.now();
         String brukernavn = session.getAttribute("username").toString();
         Brukerstatistikk oppføring = new Brukerstatistikk(brukernavn, idag, valgtAvfallstype, vekt);
         brukerService.registrerResirkulering(oppføring);
+        ra.addFlashAttribute("melding", valgtAvfallstype + " (" + vekt + " kg) er lagt til i din statistikk.");
 
-        return "profil";
+        return "redirect:registrerResirkulering";
     }
 
     @PostMapping("/oppdaterBruker")
