@@ -4,6 +4,7 @@ import com.example.TrashTag.Model.Bruker;
 import com.example.TrashTag.Model.Brukerstatistikk;
 import com.example.TrashTag.Service.BrukerService;
 import com.example.TrashTag.Service.PassordService;
+import jakarta.servlet.http.HttpSession;
 import com.example.TrashTag.Service.ReturpunktService;
 import com.example.TrashTag.Util.InputValidering;
 import com.example.TrashTag.Util.LoginUtil;
@@ -86,8 +87,7 @@ public class BrukerController {
 
     @PostMapping("/registrerResirkulering")
     public String registrerResirkulering(@RequestParam("avfallstype") String valgtAvfallstype,
-                                         @RequestParam("vekt") double vekt,
-                                         Model model) {
+                                         @RequestParam("vekt") double vekt, Model model) {
 
         LocalDate idag = LocalDate.now();
         String brukernavn = "princecharming";

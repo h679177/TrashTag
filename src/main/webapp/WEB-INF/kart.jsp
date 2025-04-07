@@ -39,7 +39,7 @@
             </div>
         </c:forEach>
 
-        <input type="number" id="vektInput" name="vekt" placeholder="Vekt avfall">
+        <input type="text" id="koordinatInput" name="koordinat" placeholder="Postnr/koordinat">
 
         <button type="submit">Søk</button>
     </form>

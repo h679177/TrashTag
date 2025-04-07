@@ -19,6 +19,10 @@ public class BrukerService {
         brukerRepo.save(bruker);
     }
 
-    public void registrerResirkulering(Brukerstatistikk stat) {statistikkRepo.save(stat);}
+    public void registrerResirkulering(Brukerstatistikk stat) {
+
+        statistikkRepo.save(stat);
+    }
+
 
 }
