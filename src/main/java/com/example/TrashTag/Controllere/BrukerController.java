@@ -66,7 +66,7 @@ public class BrukerController {
         if (!feilmeldinger.isEmpty()) {
             ra.addFlashAttribute("feilmeldinger", feilmeldinger);
             ra.addFlashAttribute("bruker", bruker);
-            return "redirect:opprettBruker";
+            return "redirect:profil";
         }
 
         String salt = passordService.genererTilfeldigSalt();
@@ -77,9 +77,7 @@ public class BrukerController {
                 bruker.getEtternavn(),
                 bruker.getPostnummer(),
                 bruker.getGatenavn(),
-                false,
-                bruker.getNabolag(),
-                false
+                bruker.getNabolag()
         );
 
         godkjentBruker.setHash(hash);
@@ -118,19 +116,66 @@ public class BrukerController {
         return "redirect:registrerResirkulering";
     }
 
-    @PostMapping("/oppdaterBruker")
-    public String oppdaterBruker(@Valid @ModelAttribute("oppdaterBruker") Bruker bruker,
-                                 HttpSession session)  {
-        Bruker innlogget = (Bruker)session.getAttribute("bruker");
+    @PostMapping("/endreBruker")
+    public String endreBruker(@Valid @ModelAttribute("bruker") Bruker bruker,
+                              @RequestParam("nyttPassord") String nyttPassord,
+                              @RequestParam("repNyttPassord") String repNyttPassord,
+                              BindingResult bindingResult,
+                              RedirectAttributes ra,
+                              Model model,
+                              HttpSession session) {
+
+        Bruker innlogget = (Bruker) session.getAttribute("bruker");
+        List<String> feilmeldinger = InputValidering.validerRedigerBruker(bruker);
+
+        if (!LoginUtil.erInnlogget(session)) {
+            feilmeldinger.add("Du må være innlogget for å redigere profilen din");
+            model.addAttribute("feilmeldinger", feilmeldinger);
+            return "redirect:loggInn";
+        }
+
+        if (bindingResult.hasErrors()) {
+            bindingResult.getAllErrors().forEach(error -> {
+                feilmeldinger.add(error.getDefaultMessage());
+            });
+        }
+        if (!feilmeldinger.isEmpty()) {
+            ra.addFlashAttribute("feilmeldinger", feilmeldinger);
+            return "redirect:redigerBruker";
+        }
+        innlogget.setBrukernavn(innlogget.getBrukernavn());
         innlogget.setFornavn(bruker.getFornavn());
         innlogget.setEtternavn(bruker.getEtternavn());
-        innlogget.setPostnummer(bruker.getPostnummer());
         innlogget.setGatenavn(bruker.getGatenavn());
-        brukerService.oppdaterBruker(innlogget);
+        innlogget.setPostnummer(bruker.getPostnummer());
 
+        if(bruker.getPassord() != null){
+            if(passordService.erKorrektPassord(bruker.getPassord(), innlogget.getSalt(), innlogget.getHash())){
+                if(passordService.erPassordInputLike(nyttPassord, repNyttPassord)){
+                    if(InputValidering.validerPassord(nyttPassord)){
+                        innlogget.setPassord(nyttPassord);
+                        String salt = passordService.genererTilfeldigSalt();
+                        String hash = passordService.hashMedSalt(nyttPassord, salt);
+                        innlogget.setHash(hash);
+                        innlogget.setSalt(salt);
+                    }
+                }
+            }
+        }
 
-        return "profil";
+        if (feilmeldinger.isEmpty()) {
+            brukerService.oppdaterBruker(innlogget);
+        } else {
+            ra.addFlashAttribute("feilmeldinger", feilmeldinger);
+            return "redirect:redigerBruker";
+        }
+
+        return "redirect:profil";
     }
+
+
+
+
 
     @PostMapping("/slettBruker")
     public String slettBruker(HttpSession session, RedirectAttributes ra) {

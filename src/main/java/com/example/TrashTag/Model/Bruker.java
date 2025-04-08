@@ -11,7 +11,7 @@ public class Bruker {
 
     private String fornavn;
     private String etternavn;
-    private int postnummer;
+    private Integer postnummer;
     private String gatenavn;
     private boolean deler_data;
     private boolean deler_navn;
@@ -28,16 +28,14 @@ public class Bruker {
     public Bruker() {}
 
     public Bruker(String brukernavn, String fornavn, String etternavn,
-                  int postnr, String gatenavn, boolean deler_data,
-                  String nabolag, boolean deler_navn) {
+                  Integer postnr, String gatenavn,
+                  String nabolag) {
         this.brukernavn = brukernavn;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.postnummer = postnr;
         this.gatenavn = gatenavn;
-        this.deler_data = deler_data;
         this.nabolag = nabolag;
-        this.deler_navn = deler_navn;
     }
 
 
@@ -66,11 +64,11 @@ public class Bruker {
     }
 
 
-    public int getPostnummer() {
+    public Integer getPostnummer() {
         return postnummer;
     }
 
-    public void setPostnummer(int postnummer) {
+    public void setPostnummer(Integer postnummer) {
         this.postnummer = postnummer;
     }
 

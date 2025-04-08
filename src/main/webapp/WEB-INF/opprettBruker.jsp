@@ -20,7 +20,8 @@
     <a href="profil">PROFIL</a>
 </nav>
 
-<h2>Opprett bruker</h2><p style="color:red;">
+<h2>Opprett bruker</h2>
+<p style="color:red;">
 
     <c:if test="${not empty feilmeldinger}">
         <c:forEach var="feilmelding" items="${feilmeldinger}">

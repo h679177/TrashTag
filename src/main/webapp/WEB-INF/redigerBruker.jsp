@@ -29,32 +29,46 @@
     </form>
 </c:if>
 
-<form action="oppdaterBruker" method="post" id="redigerBruker">
-<fieldset>
-    <p>Fornavn<br>
-        <input type="text" name="fornavn" value="${bruker.fornavn}">
-    </p>
-    <p>Etternavn<br>
-        <input type="text" name="etternavn" value="${bruker.etternavn}">
-    </p>
-    <p>Postnummer<br>
-        <input type="text" name="postnummer" value="${bruker.postnummer}">
-    </p>
-    <p>Gatenavn<br>
-        <input type="text" name="gatenavn" value="${bruker.gatenavn}">
-    </p>
-    <p>Passord<br>
-        <input type="password" name="passord">
-    </p>
-    <p>Repetert Passord<br>
-        <input type="password" name="repPassord">
-    </p>
-    <input type="submit" value="Oppdater bruker"/>
-    <form method="post" action="slettBruker" style="display:inline;" onsubmit="return confirmDelete();">
-        <button type="submit">Slett Bruker</button>
-    </form>
-</fieldset>
+<p style="color:red;">
+
+    <c:if test="${not empty feilmeldinger}">
+        <c:forEach var="feilmelding" items="${feilmeldinger}">
+            ${feilmelding}<br>
+        </c:forEach>
+    </c:if>
+</p>
+
+<form action="endreBruker" method="post" id="bruker">
+    <fieldset>
+        <p>Fornavn<br>
+            <input type="text" name="fornavn" value="${bruker.fornavn}">
+        </p>
+        <p>Etternavn<br>
+            <input type="text" name="etternavn" value="${bruker.etternavn}">
+        </p>
+        <p>Postnummer<br>
+            <input type="text" name="postnummer" placeholder="Enter postnummer"
+                   value="${bruker.postnummer != null ? bruker.postnummer : ''}"/>
+        </p>
+        <p>Gatenavn<br>
+            <input type="text" name="gatenavn" value="${bruker.gatenavn}">
+        </p>
+        <p>Passord<br>
+            <input type="password" name="passord">
+        </p>
+        <p>Passord<br>
+            <input type="password" name="nyttPassord">
+        </p>
+        <p>Repetert Passord<br>
+            <input type="password" name="repNyttPassord">
+        </p>
+        <input type="submit" value="Oppdater bruker"/>
+    </fieldset>
 </form>
+<form method="post" action="slettBruker" style="display:inline;" onsubmit="return confirmDelete();">
+    <button type="submit">Slett Bruker</button>
+</form>
+
 <script>
     function confirmDelete() {
         return confirm("Er du sikker på at du vil slette brukeren? Dette kan ikke angres, og alle lagrede data vil gå tapt.");
