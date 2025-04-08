@@ -29,7 +29,7 @@
     </form>
 </c:if>
 
-<form action="oppdaterBruker" method="post" id="bruker">
+<form action="oppdaterBruker" method="post" id="redigerBruker">
 <fieldset>
     <p>Fornavn<br>
         <input type="text" name="fornavn" value="${bruker.fornavn}">
