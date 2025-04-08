@@ -76,8 +76,7 @@ public class BrukerController {
                 bruker.getFornavn(),
                 bruker.getEtternavn(),
                 bruker.getPostnummer(),
-                bruker.getGatenavn(),
-                bruker.getNabolag()
+                bruker.getGatenavn()
         );
 
         godkjentBruker.setHash(hash);

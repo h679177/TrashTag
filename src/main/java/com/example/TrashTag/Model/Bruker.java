@@ -27,15 +27,17 @@ public class Bruker {
 
     public Bruker() {}
 
+    public Bruker(String brukernavn) {
+        this.brukernavn = brukernavn;
+    }
+
     public Bruker(String brukernavn, String fornavn, String etternavn,
-                  Integer postnr, String gatenavn,
-                  String nabolag) {
+                  Integer postnr, String gatenavn) {
         this.brukernavn = brukernavn;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.postnummer = postnr;
         this.gatenavn = gatenavn;
-        this.nabolag = nabolag;
     }
 
 

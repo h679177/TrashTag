@@ -7,6 +7,8 @@ import com.example.TrashTag.Repositories.StatistikkRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class BrukerService {
     @Autowired
@@ -15,8 +17,12 @@ public class BrukerService {
     @Autowired
     private StatistikkRepo statistikkRepo;
 
-    public void lagreBruker(Bruker bruker) {
-        brukerRepo.save(bruker);
+    public Bruker lagreBruker(Bruker bruker) {
+        Optional<Bruker> sjekkBruker = brukerRepo.findById(bruker.getBrukernavn());
+        if(sjekkBruker.isEmpty()) {
+            return brukerRepo.save(bruker);
+        }
+        return null;
     }
 
     public void registrerResirkulering(Brukerstatistikk stat) {
