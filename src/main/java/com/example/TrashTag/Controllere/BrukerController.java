@@ -98,15 +98,22 @@ public class BrukerController {
 
     @PostMapping("/registrerResirkulering")
     public String registrerResirkulering(@RequestParam("avfallstype") String valgtAvfallstype,
-                                         @RequestParam("vekt") double vekt,
+                                         @RequestParam("vekt") String vekt,
                                          HttpSession session,
                                          RedirectAttributes ra) {
 
         LocalDate idag = LocalDate.now();
+        double vektNum;
         String brukernavn = session.getAttribute("username").toString();
-        Brukerstatistikk oppføring = new Brukerstatistikk(brukernavn, idag, valgtAvfallstype, vekt);
-        brukerService.registrerResirkulering(oppføring);
-        ra.addFlashAttribute("melding", valgtAvfallstype + " (" + vekt + " kg) er lagt til i din statistikk.");
+
+        try {
+            vektNum = Double.parseDouble(vekt);
+            Brukerstatistikk oppføring = new Brukerstatistikk(brukernavn, idag, valgtAvfallstype, vektNum);
+            brukerService.registrerResirkulering(oppføring);
+            ra.addFlashAttribute("melding", valgtAvfallstype + " (" + vekt + " kg) er lagt til i din statistikk.");
+        } catch (NumberFormatException e) {
+            System.out.println("Ikke et tall.");
+        }
 
         return "redirect:registrerResirkulering";
     }
