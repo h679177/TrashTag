@@ -24,7 +24,7 @@ public class LoggInnUtController {
     BrukerRepo brukerRepo;
 
     @GetMapping("/loggInn")
-    public String innlogging(Model model) {
+    public String innlogging(Model model, HttpSession session) {
         if (model.containsAttribute("feilmeldinger")) {
             model.addAttribute("feilmeldinger", model.getAttribute("feilmeldinger"));
         }

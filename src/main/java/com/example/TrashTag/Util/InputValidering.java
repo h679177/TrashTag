@@ -12,6 +12,8 @@ public class InputValidering {
         public static final String POSTNR_REGEX = "^(\\d{4}|)$";
         public static final String GATENAVN_REGEX = "^(?:[A-Za-zÆØÅæøå]{4,40}(?:\\s+[A-Za-zÆØÅæøå]{4,40})*)?$";
         public static final String PASSORD_REGEX = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,16}$";
+        public static final String VEKT_VALIDERING = "^(?:[0-4]?[0-9](\\.\\d+)?|50(\\.0+)?|0(\\.\\d+)?|(?:0|0\\.\\d+))$";
+
 
         public static boolean validerBrukernavn(String brukernavn) {
             return brukernavn != null && brukernavn.matches(BRUKERNAVN_REGEX);
@@ -34,10 +36,10 @@ public class InputValidering {
                 }
              System.out.println("postnummer is not empty");
              return postnummer.matches(POSTNR_REGEX);
-    }
+        }
 
 
-    public static boolean validerGatenavn(String gatenavn) {
+         public static boolean validerGatenavn(String gatenavn) {
             return gatenavn != null && gatenavn.matches(GATENAVN_REGEX);
         }
 
@@ -49,7 +51,11 @@ public class InputValidering {
             return passord != null && passord.equals(repPassord);
         }
 
-    public static List<String> validerBruker(Bruker bruker) {
+        public static boolean validerVekt(String vekt) {
+        return vekt != null && vekt.matches(VEKT_VALIDERING);
+        }
+
+        public static List<String> validerBruker(Bruker bruker) {
         List<String> feilmeldinger = new ArrayList<>();
 
         if (!validerBrukernavn(bruker.getBrukernavn())) {
@@ -94,4 +100,11 @@ public class InputValidering {
         return feilmeldinger;
     }
 
+    public static List<String> validerResirkulering(String resirkulering) {
+            List<String> feilmeldinger = new ArrayList<>();
+            if(!validerVekt(resirkulering)) {
+                feilmeldinger.add("Feil i resirkulering!");
+            }
+            return feilmeldinger;
     }
+}

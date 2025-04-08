@@ -95,7 +95,14 @@ public class BrukerController {
     }
 
     @GetMapping("/registrerResirkulering")
-    public String visResirkRegistrering(Model model) {
+    public String visResirkRegistrering(Model model,
+                                        HttpSession session) {
+        List<String> feilmeldinger = new ArrayList<>();
+        if (!LoginUtil.erInnlogget(session)) {
+            feilmeldinger.add("Du må være innlogget for å se eller regisrere resirkulering");
+            model.addAttribute("feilmeldinger", feilmeldinger);
+            return "redirect:loggInn";
+        }
         model.addAttribute("kategorier", returpunktService.hentAlleTyper());
         return "registrerResirkulering";
     }
@@ -104,20 +111,24 @@ public class BrukerController {
     public String registrerResirkulering(@RequestParam("avfallstype") String valgtAvfallstype,
                                          @RequestParam("vekt") String vekt,
                                          HttpSession session,
-                                         RedirectAttributes ra) {
+                                         RedirectAttributes ra,
+                                         Model model) {
 
         LocalDate idag = LocalDate.now();
         double vektNum;
         String brukernavn = session.getAttribute("username").toString();
 
-        try {
-            vektNum = Double.parseDouble(vekt);
-            Brukerstatistikk oppføring = new Brukerstatistikk(brukernavn, idag, valgtAvfallstype, vektNum);
-            brukerService.registrerResirkulering(oppføring);
-            ra.addFlashAttribute("melding", valgtAvfallstype + " (" + vekt + " kg) er lagt til i din statistikk.");
-        } catch (NumberFormatException e) {
-            System.out.println("Ikke et tall.");
+        List<String> feilmeldinger = InputValidering.validerResirkulering(vekt);
+
+        if(!feilmeldinger.isEmpty()) {
+            ra.addFlashAttribute("feilmeldinger", feilmeldinger);
+            return "redirect:registrerResirkulering";
         }
+
+        vektNum = Double.parseDouble(vekt);
+        Brukerstatistikk oppføring = new Brukerstatistikk(brukernavn, idag, valgtAvfallstype, vektNum);
+        brukerService.registrerResirkulering(oppføring);
+        ra.addFlashAttribute("melding", valgtAvfallstype + " (" + vekt + " kg) er lagt til i din statistikk.");
 
         return "redirect:registrerResirkulering";
     }
@@ -142,6 +153,7 @@ public class BrukerController {
             ra.addFlashAttribute("feilmeldinger", feilmeldinger);
             return "redirect:redigerBruker";
         }
+
         innlogget.setBrukernavn(innlogget.getBrukernavn());
         innlogget.setFornavn(bruker.getFornavn());
         innlogget.setEtternavn(bruker.getEtternavn());
@@ -172,7 +184,6 @@ public class BrukerController {
             ra.addFlashAttribute("feilmeldinger", feilmeldinger);
             return "redirect:redigerBruker";
         }
-
         return "redirect:profil";
     }
 

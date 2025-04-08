@@ -26,6 +26,11 @@
     </form>
 </c:if>
 
+<p style="color:red;">
+    <c:forEach var="feilmelding" items="${feilmeldinger}">
+        ${feilmelding}<br>
+    </c:forEach></p>
+
 <form method="post" action="registrerResirkulering">
     <fieldset>
         <label for="avfallstype">Avfallstype</label>
