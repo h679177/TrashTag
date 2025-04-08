@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -43,7 +44,13 @@ public class BrukerController {
     }
 
     @GetMapping("/redigerBruker")
-    public String redigerBruker() {
+    public String redigerBruker(HttpSession session, Model model) {
+        List<String> feilmeldinger = new ArrayList<>();
+        if (!LoginUtil.erInnlogget(session)) {
+            feilmeldinger.add("Du må være innlogget for å redigere profilen din");
+            model.addAttribute("feilmeldinger", feilmeldinger);
+            return "redirect:loggInn";
+        }
         return "redigerBruker";
     }
 
@@ -121,17 +128,10 @@ public class BrukerController {
                               @RequestParam("repNyttPassord") String repNyttPassord,
                               BindingResult bindingResult,
                               RedirectAttributes ra,
-                              Model model,
                               HttpSession session) {
 
         Bruker innlogget = (Bruker) session.getAttribute("bruker");
         List<String> feilmeldinger = InputValidering.validerRedigerBruker(bruker);
-
-        if (!LoginUtil.erInnlogget(session)) {
-            feilmeldinger.add("Du må være innlogget for å redigere profilen din");
-            model.addAttribute("feilmeldinger", feilmeldinger);
-            return "redirect:loggInn";
-        }
 
         if (bindingResult.hasErrors()) {
             bindingResult.getAllErrors().forEach(error -> {
@@ -158,7 +158,11 @@ public class BrukerController {
                         innlogget.setHash(hash);
                         innlogget.setSalt(salt);
                     }
+                } else {
+                    feilmeldinger.add("Passordene må være like");
                 }
+            } else {
+                feilmeldinger.add("Skriv inn korrekt passord for å endre informasjon.");
             }
         }
 

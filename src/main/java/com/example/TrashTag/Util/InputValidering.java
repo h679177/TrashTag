@@ -10,7 +10,7 @@ public class InputValidering {
         public static final String BRUKERNAVN_REGEX = "^[A-ZÆØÅa-zæøå0-9 -]{2,20}$";
         public static final String NAVN_REGEX = "^([A-ZÆØÅ][A-ZÆØÅa-zæøå-]{2,29}|)$";
         public static final String POSTNR_REGEX = "^(\\d{4}|)$";
-        public static final String GATENAVN_REGEX = "^([A-Za-zÆØÅæøå]{4,40}|)$";
+        public static final String GATENAVN_REGEX = "^(?:[A-Za-zÆØÅæøå]{4,40}(?:\\s+[A-Za-zÆØÅæøå]{4,40})*)?$";
         public static final String PASSORD_REGEX = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,16}$";
 
         public static boolean validerBrukernavn(String brukernavn) {
