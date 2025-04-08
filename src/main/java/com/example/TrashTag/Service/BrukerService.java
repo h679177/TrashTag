@@ -25,7 +25,7 @@ public class BrukerService {
     }
 
     public void oppdaterBruker(Bruker bruker) {
-
+        brukerRepo.save(bruker);
     }
 
     public void slettBruker(Bruker bruker) {

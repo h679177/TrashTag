@@ -29,7 +29,7 @@
     </form>
 </c:if>
 
-<form action="lagBruker" method="post" id="bruker">
+<form action="oppdaterBruker" method="post" id="bruker">
 <fieldset>
     <p>Fornavn<br>
         <input type="text" name="fornavn" value="${bruker.fornavn}">
@@ -49,7 +49,7 @@
     <p>Repetert Passord<br>
         <input type="password" name="repPassord">
     </p>
-    <input type="submit" value="Opprett bruker"/>
+    <input type="submit" value="Oppdater bruker"/>
     <form method="post" action="slettBruker" style="display:inline;" onsubmit="return confirmDelete();">
         <button type="submit">Slett Bruker</button>
     </form>

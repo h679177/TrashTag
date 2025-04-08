@@ -112,7 +112,19 @@ public class BrukerController {
     }
 
     @PostMapping("/oppdaterBruker")
-    public String oppdaterBruker()  {
+    public String oppdaterBruker(@RequestParam(value = "fornavn", required = false) String fornavn,
+                                 @RequestParam(value = "etternavn", required = false) String etternavn,
+                                 @RequestParam(value = "postnummer", required = false) String postnummer,
+                                 @RequestParam(value = "gatenavn", required = false) String gatenavn,
+                                 HttpSession session)  {
+        Bruker innlogget = (Bruker)session.getAttribute("bruker");
+        innlogget.setFornavn(fornavn);
+        innlogget.setEtternavn(etternavn);
+        innlogget.setPostnummer(Integer.parseInt(postnummer));
+        innlogget.setGatenavn(gatenavn);
+        brukerService.oppdaterBruker(innlogget);
+
+
         return "profil";
     }
 
