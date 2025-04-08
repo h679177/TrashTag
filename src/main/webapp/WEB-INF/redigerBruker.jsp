@@ -12,12 +12,14 @@
 </head>
 
 <body>
-<nav>
-    <a href="hjem">HJEM</a>
-    <a href="vareSok">SØK</a>
-    <a href="kart">KART</a>
-    <a href="profil">PROFIL</a>
-</nav>
+<div class="container">
+    <div class="topnav">
+        <a href="hjem">HJEM</a>
+        <a href="vareSok">SØK</a>
+        <a href="kart">KART</a>
+        <a href="profil">PROFIL</a>
+    </div>
+</div>
 
 <h1>Rediger profil</h1>
 <c:if test="${empty username}">

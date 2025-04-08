@@ -1,62 +1,77 @@
-/* general theme/layout */
-    /* Styles for the body */
+/* GENERAL THEME/LAYOUT */
+/* Styles for the body */
     body {
-        background-color: #fff9f0;
+        background-color: #f3e7da;
+        color: #656965;
+        font-family: Nunito, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;  /* Arrange items vertically */
+        overflow-x: hidden;  /* Disable horizontal scrolling */
         padding: 0;
-        margin: 0; /* Remove default margin */
-        font-family: Nunito, sans-serif;
-        flex-direction: column; /* Arrange items vertically */
-        color: #656965;
+        margin: 0;  /* Remove default margin */
     }
 
-    /* navigation bar */
-    nav {
-        position: absolute;
-        top: 0;
-        left: 0;
+
+/* Navbar container */
+    .container {
+        position: relative;
         width: 100%;
-        background-color: #656965;
-        text-align: center; /* Optional: to center the links horizontally */
+        margin: 0 auto;
+        padding: 0 40px;
     }
-    nav a {
+
+    /* The navbar */
+    .topnav {
+        display: flex;
+        overflow: hidden;
+        justify-content: space-around; /* or space-between / center */
+        align-items: center;
+        padding: 14px 20px;
+    }
+
+    /* Navbar links */
+    .topnav a {
+        color: #1a9350;
+        font-size: 17px;
         text-decoration: none;
-        color: #fff5ea;
-        padding: 10px 20px; /* 10px top/bottom, 20px left/right */
-        display: inline-block;
-        margin: 0 150px; /* Adds spacing between links */
-
+        padding: 14px 16px;
     }
 
-    /* Styles for the header text */
+    .topnav a:hover {
+        background-color: #1a9350;
+        color: #f3e7da;
+    }
+
+
+/* Styles for the header text */
     h1 {
+        color: #1a9350;
         font-family: "Notable", sans-serif;
-        font-weight: 400;
         font-style: normal;
         font-size: 100px;
+        font-weight: 400;
         margin: 0px 10px;
     }
 
     h2 {
-        font-family: "Italiana", sans-serif;
-        font-weight: 550;
+        color: #1a9350;
+        font-family: "Notable", sans-serif;
         font-style: normal;
-
-        color: #656965;
-        font-size: 50px; /* Header font size */
-        margin-bottom: 0px; /* Space between header and search bar */
+        font-size: 50px;
+        font-weight: 550;
         margin-top: 20px;
+        margin-bottom: 0px;
     }
 
     h3 {
+        color: #8bcba8;
         font-family: "Hurricane", cursive;
-        font-weight: 400;
         font-style: normal;
-
-        font-size: 50px; /* Header font size */
-        margin-bottom: 70px; /* Space between header and search bar */
+        font-size: 50px;
+        font-weight: 400;
         margin-top: 0px;
+        margin-bottom: 70px;
     }
 

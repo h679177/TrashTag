@@ -1,116 +1,157 @@
-/* Styles for the search bar */
-input[type="text"] {
-    padding: 10px;
-    font-size: 1em;
-    border: 2px solid #656965;
-    border-radius: 5px;
-    width: 250px;
-    margin-right: 10px;
-    margin-top: 20px;
-}
-
-/* Styles for the submit button */
-form button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #656965;
-    color: #fff9f0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 20px;
-}
-
-/* Button hover effect */
-form button[type="submit"]:hover {
-    background-color: #48af50;
-}
-
-/* Kamera-knapp øverst */
-.scan-top-wrapper {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-#camera-button {
-    background-color: #656965;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 14px 30px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-    white-space: nowrap;
-}
-#camera-button:hover {
-    background-color: #286e34;
+/* Header */
+    .soek.header {
+        margin-top: 250px;
 }
 
 
-/* Kamera-container */
-#scanner-container {
-    display: none;
-    width: 100%;
-    max-width: 400px;
-    height: 300px;
-    margin: 20px auto;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-}
+/* Camera-button at the top */
+    .scan-top-wrapper {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
 
-#scanner {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    #camera-button {
+        color: #1a9350;
+        background-color: #8bcba8;
+        transition: background-color 0.3s ease;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 20px;
+        padding: 14px 30px;
+        margin-bottom: 50px;
+        white-space: nowrap;
+    }
+
+    #camera-button:hover {
+        color: #f3e7da;
+        background-color: #1a9350;
+    }
+
+
+/* Camera-container */
+    #scanner-container {
+        display: none;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid #d3c9bd;
+        border-radius: 10px;
+        height: 300px;
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto;
+    }
+
+    #scanner {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+/* Background colour */
+    .search-section {
+        background-color: #8bcba8;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding: 70px 0;
+        margin-top: 100px;
+
+    }
+
+/* Style for button and search bar */
+    .search-bar-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    /* Styles for the search bar */
+        input[type="text"] {
+            font-size: 1em;
+            border: 2px solid #72a88a;
+            border-radius: 5px;
+            width: 250px;
+            padding: 10px;
+            margin-right: 10px;
+            margin-top: 20px;
+        }
+
+
+    /* Styles for the submit button */
+        form button[type="submit"] {
+            color: #f3e7da;
+            background-color: #1a9350;
+            cursor: pointer;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        /* Button hover effect */
+        form button[type="submit"]:hover {
+            color: #1a9350;
+            background-color: #f3e7da;
+        }
+
 
 /* Søppelkategori-knapper */
-.trash-buttons {
-    margin-top: 40px;
-    margin-bottom: 100px;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
+    .trash-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 40px;
+        margin-bottom: 100px;
+    }
 
-.trash-buttons button:not(#camera-button) {
-    background-color: #656965;
-    color: white;
-    font-weight: bold;
-    font-size: 10px;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 60px;
-    height: 60px;
-    text-align: center;
-}
+    .trash-buttons button:not(#camera-button) {
+        color: #f3e7da;
+        background-color: #1a9350;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        border-radius: 20px;
+        gap: 10px;
+        height: 50px;
+        width: 130px;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px;
+    }
 
-.trash-buttons button img {
-    width: 28px;
-    height: 28px;
-}
+    .trash-buttons button img {
+        height: 28px;
+        width: 28px;
+    }
+
+    /* Button hover effect */
+    .trash-buttons button:not(#camera-button):hover {
+        color: #1a9350;
+        background-color: #f3e7da;
+    }
+
 
 /* Info-bokser */
-.trash-info {
-    display: none;
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-}
+    .trash-info {
+        background-color: #f9f9f9;
+        display: none;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        width: 60%;
+        padding: 10px;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }

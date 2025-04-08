@@ -1,127 +1,166 @@
-.TrashTagImage {
-    background-image: url("images/TrashTagImage.png");
-    min-height: 380px;
-    width: 100%; /* Ensure full width */
-    display: block; /* Ensures it takes up space */
-    background-repeat: no-repeat;
-    background-size: cover; /* Stretch image to cover the full area */
-    background-position: center; /* Optional: Ensure the image is centered */
-    margin-bottom: 70px;
-}
+/* Navbar */
+    .TrashTagImage {
+        background-image: url("images/banner.jpg");
+        min-height: 380px;
+        background-size: cover;  /* Stretch image to cover the full area */
+        background-position: center;  /* Ensure the image is centered */
+        background-repeat: no-repeat;
+        display: block;  /* Ensures it takes up space */
+        width: 100%;
+        margin-bottom: 70px;
+    }
 
-/* Position the navbar container inside the image */
-.container {
-    position: absolute;
-    margin: 20px;
-    width: auto;
-}
+    /* Position the navbar container inside the image */
+    .container {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 40px;  /* Some side padding */
+    }
 
-/* The navbar */
-.topnav {
-    overflow: hidden;
-}
+    /* The navbar */
+    .topnav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around; /* or space-between / center */
+        overflow: hidden;
+        padding: 14px 20px;
+    }
 
-/* Navbar links */
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
+    /* Navbar links */
+    .topnav a {
+        color: #1a9350;
+        text-decoration: none;
+        font-size: 17px;
+        padding: 14px 16px;
+    }
 
-.topnav a:hover {
-    background-color: #fff9f0;
-    color: #656965;
-}
-
-/* avsnitt */
-.text-container {
-    width: 60%; /* Adjust as needed */
-    margin: auto; /* Centers the container */
-    text-align: center; /* Ensures text inside stays left-aligned */
-    display: block; /* Ensures it's a block-level element */
-}
-
-.text-container p {
-    text-align: left; /* Ensures text is left-aligned */
-}
+    .topnav a:hover {
+        color: #f3e7da;
+        background-color: #1a9350;
+    }
 
 
-/* Create two equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-
-}
-.column p {
-    text-align: left;
-    font-size: 18px; /* Adjust font size */
-}
-
-.column-img {
-    width: 100%; /* Makes image responsive */
-    max-width: 500px; /* Adjust max size as needed */
-}
-
-.row {
-    margin: 100px 50px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+/* Paragraph */
+    .text-container {
+        display: block;  /* Ensures it's a block-level element */
+        text-align: center;  /* Ensures text inside stays left-aligned */
+        width: 60%;
+        margin: auto;  /* Centers the container */
 
 
-/*ScanBilde & knapp*/
-.scan-section {
-    text-align: center;
-    background-color: #f0f0e5;
-    padding: 40px;
-    margin: 80px auto;
-    border-radius: 20px;
-    width: 60%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+    }
 
-.scan-section h2 {
-    font-family: "Italiana", sans-serif;
-    font-size: 40px;
-    color: #656965;
-    margin-bottom: 10px;
-}
 
-.scan-section p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #656965;
-}
+/*ScanPicture & button*/
+    .scan-section {
+        background-color: #1a9350;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 100vw;  /* Full width of the page */
+        padding: 130px 0;
+        margin: 150px 0;  /* No auto-margin */
+    }
 
-.scan-image {
-    width: 200px;
-    height: auto;
-    margin-bottom: 25px;
-}
+    .scan-section h2 {
+        color: #f3e7da;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
 
-.scan-button {
-    background-color: #656965;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 14px 30px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+    .scan-section p {
+        color: #f3e7da;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
 
-.scan-button:hover {
-    background-color: #286e34;
-}
+    .scan-image {
+        height: auto;
+        width: 200px;
+        margin-bottom: 25px;
+    }
+
+    .scan-button {
+        color: #1a9350;
+        background-color: #f3e7da;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 14px 30px;
+        margin-top: 20px;
+    }
+
+    .scan-button:hover {
+        background-color: #e3d8cc;
+    }
+    .text-container p {
+        text-align: left; /* Ensures text is left-aligned */
+    }
+
+
+/* Rows */
+    .row.high {
+        display: flex; /* Activate flexbox */
+        justify-content: space-between; /* Makes space between the columns */
+        gap: 40px; /* Adjusts the space between the columns */
+        margin: 0 50px;
+        flex-wrap: wrap; /* Ensures that it adjusts to different screens */
+    }
+
+    .row.low {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 150px 50px 0;
+        flex-wrap: wrap;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+
+/* Columns */
+    .column.high {
+        flex: 1; /* Fills same availible space */
+        min-width: 300px; /* Ensures they don't get to small */
+    }
+
+    .column.low {
+        background-color: #8bcba8;
+        flex: 1;
+        text-align: center;
+        min-width: 200px;
+        padding: 20px 20px; /*  Makes text not stick to edges */
+    }
+
+    .column h3 {
+        color: #1a9350;
+        font-family: Nunito, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .column p {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .column-img {
+        width: 100%; /* Makes image responsive */
+        max-width: 600px; /* Adjust max size as needed */
+    }
+
+
+
 
 

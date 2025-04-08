@@ -12,12 +12,14 @@
 </head>
 
 <body>
-<nav>
-	<a href="hjem">HJEM</a>
-	<a href="vareSok">SØK</a>
-	<a href="kart">KART</a>
-	<a href="profil">PROFIL</a>
-</nav>
+<div class="container">
+    <div class="topnav">
+        <a href="hjem">HJEM</a>
+        <a href="vareSok">SØK</a>
+        <a href="kart">KART</a>
+        <a href="profil">PROFIL</a>
+    </div>
+</div>
 
 <c:if test="${not empty username}">
     <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
