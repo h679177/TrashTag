@@ -23,24 +23,27 @@
     </div>
 
     <h1 class="kart-header">AVFALLSSTASJONER</h1>
+    <h3>finn den nærmest deg</h3>
     <c:if test="${not empty username}">
         <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
         <form action="loggUt" method="post" style="display:inline;">
             <button type="submit">Logg Ut</button>
         </form>
     </c:if>
-    <h3>finn den nærmest deg</h3>
+
     <form method="post" action="avfallstypeValg">
-        <c:forEach var="kategori" items="${kategorier}">
-            <div>
-                <input type="checkbox" name="kategori" value="${kategori.avfallstype}" />
-                    ${kategori.avfallstype}
-            </div>
-        </c:forEach>
-
-        <input type="text" id="koordinatInput" name="koordinat" placeholder="Postnr/koordinat">
-
-        <button type="submit">Søk</button>
+        <div class="search-row">
+            <input type="text" id="koordinatInput" name="koordinat" placeholder="Postnr/koordinat">
+            <button type="submit">Søk</button>
+        </div>
+        <div class="checkbox-row">
+            <c:forEach var="kategori" items="${kategorier}">
+                <div>
+                    <input type="checkbox" name="kategori" value="${kategori.avfallstype}" />
+                        ${kategori.avfallstype}
+                </div>
+            </c:forEach>
+        </div>
     </form>
 
 <c:if test="${not empty returpunkter}">
