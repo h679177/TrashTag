@@ -32,6 +32,7 @@
 </div>
 
 <h1 class="soek header">SØK ETTER VARE</h1>
+<h3>finn ut hvordan du resirkulerer produktet riktig</h3>
 <c:if test="${not empty username}">
     <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
     <form action="loggUt" method="post" style="display:inline;">

@@ -35,13 +35,8 @@
 </c:if>
     <div class="text-container">
         <p>
-            TrashTag er en applikasjon som hjelper deg med å få oversikt over
-            hvor mye du resirkulerer, og ditt eget avfallsforbruk. Her finner du også
-            informasjon om produkt, og hvordan du skal resirkulere det produktet
-            til best mulig evne. Det er mye avfall som blir produsert i hver husstand i
-            Norge i dag. Vi mener dette kan hjelpe med å gjøre oss mer bevisste på
-            hvordan vi som forbukere kan gjøre små endringer i hverdagen, for
-            sammen å skape en større innvirkning. Det begynner alltid i det små.
+            TrashTag er en applikasjon som gir deg en oversikt over
+            hvor mye du resirkulerer, og har hjelpemidler som gjør resirkulering enkelt og effektivt i hverdagen.
         </p>
     </div>
 

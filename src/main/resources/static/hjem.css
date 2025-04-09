@@ -45,10 +45,8 @@
     .text-container {
         display: block;  /* Ensures it's a block-level element */
         text-align: center;  /* Ensures text inside stays left-aligned */
-        width: 60%;
+        width: 67%;
         margin: auto;  /* Centers the container */
-
-
     }
 
 
@@ -61,7 +59,7 @@
         align-items: center;
         width: 100vw;  /* Full width of the page */
         padding: 130px 0;
-        margin: 150px 0;  /* No auto-margin */
+        margin: 130px 0;  /* No auto-margin */
     }
 
     .scan-section h2 {
@@ -97,7 +95,7 @@
     }
 
     .scan-button:hover {
-        background-color: #e3d8cc;
+        background-color: #bee0c7;
     }
     .text-container p {
         text-align: left; /* Ensures text is left-aligned */
@@ -117,7 +115,7 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        margin: 150px 50px 0;
+        margin: 170px 50px 0;
         flex-wrap: wrap;
     }
 
@@ -136,7 +134,7 @@
     }
 
     .column.low {
-        background-color: #8bcba8;
+        background-color: #bee0c7;
         flex: 1;
         text-align: center;
         min-width: 200px;
