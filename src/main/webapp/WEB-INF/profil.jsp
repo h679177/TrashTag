@@ -9,6 +9,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Italiana&family=Notable&display=swap" rel="stylesheet">
     <title>Profil</title>
+    <style>
+        .login-button {
+            color: #1a9350;
+            background-color: #bee0c7;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+
+        .login-button:hover {
+            background-color: #a9d4b9; /* Slightly darker on hover */
+        }
+    </style>
 </head>
 
 <body>
@@ -24,10 +43,10 @@
 <h1>Profil</h1>
 <c:if test="${empty username}">
     <form action="${pageContext.request.contextPath}/loggInn" method="get">
-        <button type="submit">Logg inn</button>
+        <button style="margin-top: 20px;" type="submit" class="login-button">Logg inn</button>
     </form>
     <form action="${pageContext.request.contextPath}/opprettBruker" method="get">
-        <button type="submit">Opprett bruker</button>
+        <button style="margin-bottom: 50px;"type="submit" class="login-button">Opprett bruker</button>
     </form>
 
 </c:if>
