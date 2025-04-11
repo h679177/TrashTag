@@ -32,7 +32,7 @@ public class VareService {
         private final Vare vare;
         private final String errorMelding;
 
-        private VareResponse(Vare vare, String errorMelding) {
+        public VareResponse(Vare vare, String errorMelding) {
             this.vare = vare;
             this.errorMelding = errorMelding;
         }
