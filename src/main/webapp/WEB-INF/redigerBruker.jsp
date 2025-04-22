@@ -61,7 +61,7 @@
         <p>Passord<br>
             <input type="password" name="nyttPassord">
         </p>
-        <p>Repetert Passord<br>
+        <p>Repeter Passord<br>
             <input type="password" name="repNyttPassord">
         </p>
         <input type="submit" value="Oppdater bruker"/>

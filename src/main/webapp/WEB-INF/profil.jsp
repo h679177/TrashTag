@@ -5,29 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <link href="design.css" rel="stylesheet" type="text/css" />
+    <link href="profil.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Italiana&family=Notable&display=swap" rel="stylesheet">
     <title>Profil</title>
-    <style>
-        .login-button {
-            color: #1a9350;
-            background-color: #bee0c7;
-            transition: background-color 0.3s ease;
-            display: inline-block;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
-            white-space: nowrap;
-        }
-
-        .login-button:hover {
-            background-color: #a9d4b9; /* Slightly darker on hover */
-        }
-    </style>
 </head>
 
 <body>
@@ -40,46 +22,49 @@
     </div>
 </div>
 
-<h1>Profil</h1>
-<c:if test="${empty username}">
-    <form action="${pageContext.request.contextPath}/loggInn" method="get">
-        <button style="margin-top: 20px;" type="submit" class="login-button">Logg inn</button>
-    </form>
-    <form action="${pageContext.request.contextPath}/opprettBruker" method="get">
-        <button style="margin-bottom: 50px;"type="submit" class="login-button">Opprett bruker</button>
-    </form>
-
-</c:if>
-<c:if test="${not empty username}">
-    <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
-    <form action="loggUt" method="post" style="display:inline;">
-        <button type="submit">Logg Ut</button>
-    </form>
-
-    <form method="get" action="registrerResirkulering">
-            <button type="submit">Ny registrering</button>
-    </form>
-
-    <c:if test="${not empty bruker}">
-    <div class="bruker-info" style="display: block;">
-    <h4>Din informasjon</h4>
-    <p><i>${bruker.brukernavn}</i></p>
-    <p><i>${bruker.fornavn} ${' '} ${bruker.etternavn}</i></p>
-        <p><i>${bruker.gatenavn}, ${bruker.postnummer}</i></p>
-        <c:if test="${bruker.deler_data == true}">
-            <p style="display:inline;">Ditt nabolag: <c:out value="${bruker.nabolag}"/></p>
-        </c:if>
-        <c:if test="${bruker.deler_data == false}">
-            <p><i>Du er ikke med i et nabolag</i></p>
-        </c:if>
-        <br>
-        <form action="${pageContext.request.contextPath}/redigerBruker" method="get">
-            <button type="submit">Rediger informasjon</button>
+<h1 class="profil-header">Profil</h1>
+<h3>følg din egen utvikling</h3>
+<div class="main-content">
+    <c:if test="${empty username}">
+        <form action="${pageContext.request.contextPath}/loggInn" method="get">
+            <button style="margin-top: 20px;" type="submit" class="profil-button">Logg inn</button>
+        </form>
+        <form action="${pageContext.request.contextPath}/opprettBruker" method="get">
+            <button style="margin-bottom: 50px;"type="submit" class="profil-button">Opprett bruker</button>
         </form>
 
-    </div>
     </c:if>
-</c:if>
+    <c:if test="${not empty username}">
+        <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
+        <form action="loggUt" method="post" style="display:inline;">
+            <button type="submit">Logg Ut</button>
+        </form>
+
+        <form method="get" action="registrerResirkulering">
+                <button type="submit">Ny registrering</button>
+        </form>
+
+        <c:if test="${not empty bruker}">
+        <div class="bruker-info" style="display: block;">
+        <h4>Din informasjon</h4>
+        <p><i>${bruker.brukernavn}</i></p>
+        <p><i>${bruker.fornavn} ${' '} ${bruker.etternavn}</i></p>
+            <p><i>${bruker.gatenavn}, ${bruker.postnummer}</i></p>
+            <c:if test="${bruker.deler_data == true}">
+                <p style="display:inline;">Ditt nabolag: <c:out value="${bruker.nabolag}"/></p>
+            </c:if>
+            <c:if test="${bruker.deler_data == false}">
+                <p><i>Du er ikke med i et nabolag</i></p>
+            </c:if>
+            <br>
+            <form action="${pageContext.request.contextPath}/redigerBruker" method="get">
+                <button type="submit">Rediger informasjon</button>
+            </form>
+
+        </div>
+        </c:if>
+    </c:if>
+</div>
 
     <%@ include file="footer.jsp" %>
 </body>

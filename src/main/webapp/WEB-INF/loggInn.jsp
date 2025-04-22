@@ -6,29 +6,11 @@
 <head>
     <meta charset="UTF-8">
     <link href="design.css" rel="stylesheet" type="text/css" />
+    <link href="profil.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Italiana&family=Notable&display=swap" rel="stylesheet">
     <title>Profil</title>
-    <style>
-        .login-button {
-            color: #1a9350;
-            background-color: #bee0c7;
-            transition: background-color 0.3s ease;
-            display: inline-block;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
-            white-space: nowrap;
-        }
-
-        .login-button:hover {
-            background-color: #a9d4b9; /* Slightly darker on hover */
-        }
-    </style>
 </head>
 
 <body>
@@ -41,18 +23,18 @@
     </div>
 </div>
 
-<h1>Logg inn</h1>
+<h1 class="login-header">Logg inn</h1>
 <p style="color:red;">
     <c:forEach var="feilmelding" items="${feilmeldinger}">
         ${feilmelding}<br>
     </c:forEach></p>
-<form action="login" method="post">
-    <fieldset style="border: 3px solid #1a9350; border-radius: 10px; padding: 20px; margin-bottom: 50px">
-        <p>Brukernavn: <br><input type="text" name="brukernavn"></p>
-        <p>Passord: <br><input type="password" name="passord"></p>
+<form action="login" method="post" class="fyllInn">
+        <p>Brukernavn <br><input type="text" name="brukernavn"></p>
+        <p>Passord <br><input type="password" name="passord"></p>
         <input type="submit" value="Logg inn" class="login-button"/><br>
     </fieldset>
 </form>
+
 <%@ include file="footer.jsp" %>
 </body>
 </html>

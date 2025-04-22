@@ -32,10 +32,11 @@
         margin-top: 20px;
     }
 
-    /* Button */
+    /* button */
     button[type="submit"] {
         color: #1a9350;
         background-color: #bee0c7;
+        transition: background-color 0.3s ease;
         cursor: pointer;
         border: none;
         border-radius: 15px;
@@ -45,7 +46,7 @@
         margin-top: 20px;
     }
 
-    /* Button hover effect */
+    /* button hover effect */
     button[type="submit"]:hover {
         color: #f3e7da;
         background-color: #1a9350;
@@ -72,41 +73,46 @@
         margin-bottom: 10px;
     }
 
+    input[type="checkbox"]:checked {
+        accent-color: #1a9350;
+    }
 
 
 
 /* Table styling */
-.styled-table {
-    width: 50%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    text-align: left;
-    background-color: #fff;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
+    .styled-table {
+        width: 50%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        text-align: left;
+        background-color: #fff;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
 
-.styled-table th, .styled-table td {
-    padding: 12px 20px;
-}
+    .styled-table th, .styled-table td {
+        padding: 12px 20px;
+    }
 
-.styled-table th {
-    background-color: #656965;
-    color: white;
-}
+    .styled-table th {
+        background-color: #656965;
+        color: white;
+    }
 
-.styled-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+    .styled-table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
 
-.styled-table tbody tr:hover {
-    background-color: #ddd;
-}
+    .styled-table tbody tr:hover {
+        background-color: #ddd;
+    }
 
 
-#map {
-    height: 40%;
-    width: 40%;
-    min-height: 500px;
-    min-width: 500px;
-}
+/* the map */
+    #map {
+        height: 70%;
+        width: 100%;
+        min-height: 500px;
+        min-width: 500px;
+        margin-top: 10px;
+    }

@@ -25,7 +25,7 @@
 </div>
 
 
-<h1>TrashTag</h1>
+<h1 class="hjem-header">TrashTag</h1>
 <h3>for smartere resirkulering</h3>
 <c:if test="${not empty username}">
     <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
@@ -33,12 +33,7 @@
         <button type="submit">Logg Ut</button>
     </form>
 </c:if>
-    <div class="text-container">
-        <p>
-            TrashTag er en applikasjon som gir deg en oversikt over
-            hvor mye du resirkulerer, og har hjelpemidler som gjør resirkulering enkelt og effektivt i hverdagen.
-        </p>
-    </div>
+
 
 
 <!-- Scan bilde og knapp -->
@@ -55,6 +50,11 @@
 <div class="row high">
     <div class="column high">
         <h2>Hvordan fungerer<br /> det?</h2>
+        <p>
+            TrashTag er en applikasjon som gir deg en oversikt over<br />
+            hvor mye du resirkulerer, og har hjelpemidler som<br />
+            gjør resirkulering enkelt og effektivt i hverdagen.
+        </p>
         <p>
             Ved å veie avfallet ditt og registrere hvilket materiale det<br />
             er når du kaster det, vil du få opp statestikk på brukerkontoen din.<br />

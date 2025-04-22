@@ -40,26 +40,22 @@
         background-color: #1a9350;
     }
 
-
-/* Paragraph */
-    .text-container {
-        display: block;  /* Ensures it's a block-level element */
-        text-align: center;  /* Ensures text inside stays left-aligned */
-        width: 67%;
-        margin: auto;  /* Centers the container */
+    .hjem-header {
+        margin-top: 50px;
     }
 
 
 /*ScanPicture & button*/
     .scan-section {
         background-color: #1a9350;
+        transition: background-color 0.3s ease;
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
         width: 100vw;  /* Full width of the page */
         padding: 130px 0;
-        margin: 130px 0;  /* No auto-margin */
+        margin: 80px 0;  /* No auto-margin */
     }
 
     .scan-section h2 {
