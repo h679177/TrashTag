@@ -66,7 +66,7 @@
         <a href="profil">PROFIL</a>
     </div>
 
-<h1>Personvernerklæring for TrashTag</h1>
+<h1 style="margin: 0">Personvernerklæring for TrashTag</h1>
 <p><strong>Sist oppdatert:</strong> 24.April 2025</p>
 
 <p>TrashTag er en fiktiv applikasjon utviklet som en del av et skoleprosjekt. Formålet med appen er å hjelpe brukere med å sortere søppel riktig ved å skanne produkter, samt finne nærmeste søppelkasse. Denne personvernerklæringen forklarer hvordan vi hypotetisk samler inn og bruker personopplysninger i appen.</p>

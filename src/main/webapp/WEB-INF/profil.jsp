@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<h1 class="profil-header">Profil</h1>
+<h1 style="margin-top: 100px" class="profil-header">Profil</h1>
 <h3>følg din egen utvikling</h3>
 <div class="main-content">
     <c:if test="${empty username}">

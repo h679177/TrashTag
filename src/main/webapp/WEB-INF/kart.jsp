@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <h1 class="kart-header">AVFALLSSTASJONER</h1>
+    <h1 style="margin-top: 100px" class="kart-header">AVFALLSSTASJONER</h1>
     <h3>finn den nærmest deg</h3>
     <c:if test="${not empty username}">
         <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
