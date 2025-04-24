@@ -22,7 +22,7 @@
         <div class="footer-section">
             <h4>LEGAL</h4>
             <ul>
-                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                <li><a href="${pageContext.request.contextPath}/personvern.jsp">Privacy Policy</a></li>
                 <li><a href="/terms-of-service">Bruksvilkar</a></li>
             </ul>
         </div>
