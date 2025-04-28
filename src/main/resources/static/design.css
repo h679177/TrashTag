@@ -45,6 +45,41 @@
     }
 
 
+/* logg ut knapp + innlogget som */
+    .logout-container {
+        position: absolute; /* makes it float over other content */
+        top: 60px;           /* space from the top */
+        right: 20px;         /* space from the right */
+        display: flex;       /* place text and button side-by-side */
+        align-items: center; /* vertically align text and button */
+        gap: 10px;           /* space between the username and button */
+    }
+
+    .logout-button {
+        font-size: 16px;
+        font-weight: bold;
+        color: #1a9350;
+        margin: 0;
+        display: inline;
+        }
+
+    .logout-btn {
+        background-color: #1a9350;
+        color: #f3e7da;
+        border: none;
+        padding: 5px 10px;
+        font-size: 14px;
+        line-height: 1;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .logout-btn:hover {
+        background-color: #bee0c7;
+        color: #1a9350;
+    }
+
+
 /* Styles for the header text */
     h1 {
         color: #1a9350;

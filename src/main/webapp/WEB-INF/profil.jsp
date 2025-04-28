@@ -35,13 +35,15 @@
 
     </c:if>
     <c:if test="${not empty username}">
-        <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
-        <form action="loggUt" method="post" style="display:inline;">
-            <button type="submit">Logg Ut</button>
-        </form>
+        <div class="logout-container">
+            <p class="logout-button"><c:out value="${username}"/></p>
+            <form action="loggUt" method="post">
+                <button type="submit" class="logout-btn">Logg Ut</button>
+            </form>
+        </div>
 
         <form method="get" action="registrerResirkulering">
-                <button type="submit">Ny registrering</button>
+                <button type="submit" class="profil-button">Ny registrering</button>
         </form>
 
         <c:if test="${not empty bruker}">
@@ -58,7 +60,7 @@
             </c:if>
             <br>
             <form action="${pageContext.request.contextPath}/redigerBruker" method="get">
-                <button type="submit">Rediger informasjon</button>
+                <button type="submit" class="profil-button">Rediger informasjon</button>
             </form>
 
         </div>

@@ -44,6 +44,10 @@
         margin-bottom: 0;
     }
 
+    fieldset {
+        border: none
+    }
+
     .login-button {
         color: #f3e7da;
         background-color: #1a9350;
@@ -70,6 +74,30 @@
         width: 200px;
         margin-bottom: 10px;
     }
+
+
+/* Ny registrering */
+    .darkgreen-btn {
+        color: #f3e7da;
+        background-color: #1a9350;
+        transition: background-color 0.3s ease;
+        display: inline-block;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        white-space: nowrap;
+    }
+
+    .darkgreen-btn:hover {
+        color: #1a9350;
+        background-color: #f3e7da;
+    }
+
+
+
 
 
 

@@ -5,6 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link href="design.css" rel="stylesheet" type="text/css" />
+    <link href="profil.css" rel="stylesheet" type="text/css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Italiana&family=Notable&display=swap" rel="stylesheet">
@@ -22,18 +23,22 @@
 </div>
 
 <c:if test="${not empty username}">
-    <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
-    <form action="loggUt" method="post" style="display:inline;">
-        <button type="submit">Logg Ut</button>
-    </form>
+    <div class="logout-container">
+        <p class="logout-button"><c:out value="${username}"/></p>
+        <form action="loggUt" method="post">
+            <button type="submit" class="logout-btn">Logg Ut</button>
+        </form>
+    </div>
 </c:if>
+
+<h1 style="margin-top: 100px" class="profil-header">REGISTRER</h1>
 
 <p style="color:red;">
     <c:forEach var="feilmelding" items="${feilmeldinger}">
         ${feilmelding}<br>
     </c:forEach></p>
 
-<form method="post" action="registrerResirkulering">
+<form method="post" action="registrerResirkulering" class="fyllInn">
     <fieldset>
         <label for="avfallstype">Avfallstype</label>
         <select id="avfallstype" name="avfallstype">
@@ -45,20 +50,23 @@
 
         <input type="text" id="vektInput" name="vekt" placeholder="Vekt">
         <br/><br/>
-        <button type="submit">Registrer</button>
+        <button type="submit" class="darkgreen-btn">Registrer</button>
     </fieldset>
+
+
+    <c:if test="${not empty melding}">
+        <div style="color: green; margin-top: 10px;">
+                ${melding}
+        </div>
+    </c:if>
+
+    <form action="${pageContext.request.contextPath}/profil" method="get">
+            <button type="submit" class="darkgreen-btn">Tilbake til profil</button>
+        </form>
+
 </form>
 
-<c:if test="${not empty melding}">
-	<div style="color: green; margin-top: 10px;">
-			${melding}
-	</div>
-</c:if>
-
-<form action="${pageContext.request.contextPath}/profil" method="get">
-        <button type="submit">Tilbake til profil</button>
-    </form>
-
 <%@ include file="footer.jsp" %>
+
 </body>
 </html>

@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="design.css" rel="stylesheet" type="text/css" />
+    <link href="profil.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Italiana&family=Notable&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
     </div>
 </div>
 
-<h1>Rediger profil</h1>
+<h1 style="margin-top: 100px" class="profil-header">REDIGER PROFIL</h1>
 <c:if test="${empty username}">
     <form action="${pageContext.request.contextPath}/loggInn" method="get">
         <button type="submit">Logg inn</button>
@@ -40,7 +41,7 @@
     </c:if>
 </p>
 
-<form action="endreBruker" method="post" id="bruker">
+<form action="endreBruker" method="post" id="bruker" class="fyllInn">
     <fieldset>
         <p>Fornavn<br>
             <input type="text" name="fornavn" value="${bruker.fornavn}">
@@ -64,11 +65,12 @@
         <p>Repeter Passord<br>
             <input type="password" name="repNyttPassord">
         </p>
-        <input type="submit" value="Oppdater bruker"/>
+        <button type="submit" class="darkgreen-btn">Oppdater bruker</button>
     </fieldset>
-</form>
-<form method="post" action="slettBruker" style="display:inline;" onsubmit="return confirmDelete();">
-    <button type="submit">Slett Bruker</button>
+
+    <form method="post" action="slettBruker"  onsubmit="return confirmDelete();">
+        <button type="submit" class="darkgreen-btn">Slett Bruker</button>
+    </form>
 </form>
 
 <script>
@@ -76,7 +78,6 @@
         return confirm("Er du sikker på at du vil slette brukeren? Dette kan ikke angres, og alle lagrede data vil gå tapt.");
     }
 </script>
-
 
 <%@ include file="footer.jsp" %>
 </body>

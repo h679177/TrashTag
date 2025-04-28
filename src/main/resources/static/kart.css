@@ -33,7 +33,7 @@
     }
 
     /* button */
-    button[type="submit"] {
+    .soek-button {
         color: #1a9350;
         background-color: #bee0c7;
         transition: background-color 0.3s ease;
@@ -47,7 +47,7 @@
     }
 
     /* button hover effect */
-    button[type="submit"]:hover {
+    .soek-button:hover {
         color: #f3e7da;
         background-color: #1a9350;
     }
@@ -95,7 +95,7 @@
     }
 
     .styled-table th {
-        background-color: #656965;
+        background-color: #1a9350;
         color: white;
     }
 

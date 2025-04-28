@@ -84,7 +84,7 @@
 
 
     /* Styles for the submit button */
-        form button[type="submit"] {
+        .soek-button {
             color: #f3e7da;
             background-color: #1a9350;
             transition: background-color 0.3s ease;
@@ -98,7 +98,7 @@
         }
 
         /* Button hover effect */
-        form button[type="submit"]:hover {
+        .soek-button:hover {
             color: #1a9350;
             background-color: #f3e7da;
         }

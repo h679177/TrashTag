@@ -25,16 +25,18 @@
     <h1 style="margin-top: 100px" class="kart-header">AVFALLSSTASJONER</h1>
     <h3>finn den nærmest deg</h3>
     <c:if test="${not empty username}">
-        <p style="display:inline;">innlogget som <c:out value="${username}"/></p>
-        <form action="loggUt" method="post" style="display:inline;">
-            <button type="submit">Logg Ut</button>
-        </form>
+        <div class="logout-container">
+            <p class="logout-button"><c:out value="${username}"/></p>
+            <form action="loggUt" method="post">
+                <button type="submit" class="logout-btn">Logg Ut</button>
+            </form>
+        </div>
     </c:if>
 
     <form method="post" action="avfallstypeValg">
         <div class="search-row">
             <input type="text" id="koordinatInput" name="koordinat" placeholder="Postnr/koordinat">
-            <button type="submit">Søk</button>
+            <button type="submit" class="soek-button">Søk</button>
         </div>
         <div class="checkbox-row">
             <c:forEach var="kategori" items="${kategorier}">
