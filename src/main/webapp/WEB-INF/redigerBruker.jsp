@@ -67,10 +67,12 @@
         </p>
         <button type="submit" class="darkgreen-btn">Oppdater bruker</button>
     </fieldset>
-
+</form>
     <form method="post" action="slettBruker"  onsubmit="return confirmDelete();">
         <button type="submit" class="darkgreen-btn">Slett Bruker</button>
     </form>
+
+
 </form>
 
 <script>
