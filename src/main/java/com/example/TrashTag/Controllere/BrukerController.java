@@ -73,7 +73,7 @@ public class BrukerController {
         if (!feilmeldinger.isEmpty()) {
             ra.addFlashAttribute("feilmeldinger", feilmeldinger);
             ra.addFlashAttribute("bruker", bruker);
-            return "redirect:profil";
+            return "redirect:opprettBruker";
         }
 
         String salt = passordService.genererTilfeldigSalt();
@@ -186,10 +186,6 @@ public class BrukerController {
         }
         return "redirect:profil";
     }
-
-
-
-
 
     @PostMapping("/slettBruker")
     public String slettBruker(HttpSession session, RedirectAttributes ra) {

@@ -34,7 +34,7 @@
 </p>
 
 <form action="lagBruker" method="post" id="bruker" class="fyllInn">
-        <p>Brukernavn<br>
+        <p>Brukernavn*<br>
             <input type="text" name="brukernavn" value="${bruker.brukernavn}">
         </p>
         <p>Fornavn<br>
@@ -49,10 +49,10 @@
         <p>Gatenavn<br>
             <input type="text" name="gatenavn" value="${bruker.gatenavn}">
         </p>
-        <p>Passord<br>
+        <p>Passord*<br>
             <input type="password" name="passord">
         </p>
-        <p>Repeter Passord<br>
+        <p>Repeter Passord*<br>
             <input type="password" name="repPassord">
         </p>
         <input type="submit" value="Opprett bruker" class="login-button"/>
